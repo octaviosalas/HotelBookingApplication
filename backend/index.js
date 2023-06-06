@@ -1,7 +1,7 @@
 import express from "express"
 import bodyParser from "body-parser"
 import connectDataBase from "./database/connectdb.js"
-import { agregarHoteles } from "./controllers/hotels.controllers.js"
+
 
 
 const app = express()
@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`El servidor esta funcionando correctamente en el puerto ${port} ✔✔`)
    connectDataBase()
-   agregarHoteles()
+   
   })
 
   

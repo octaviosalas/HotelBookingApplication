@@ -1,0 +1,57 @@
+
+
+.sections-container {
+    display: flex;
+    justify-content: center;
+ 
+  }
+  
+  .btns-container {
+    display: flex;
+    margin-top: 5vh;
+  }
+  
+  .btn-sections {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-sections:last-child {
+    margin-right: 0;
+  }
+
+  .btn-sections { 
+    font-size: 19px;
+  }
+
+  button:hover { 
+    background-color: rgb(143, 139, 139);
+    color: rgb(255, 249, 249);
+    margin-right: 20px;
+
+  }
+
+  .icons-img { 
+    height: 30px;
+    width: 25px;
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .btns-container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    button {
+      margin-bottom: 10px;
+    }
+  }

@@ -1,0 +1,71 @@
+.component-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .continents-div {
+    display: flex;
+  }
+  
+  .continent-btn {
+    background-color: #ccc;
+    color: #010101;
+    border: none;
+    border-radius: 50%;
+    padding: 20px 40px;
+    margin-right: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    height: 250px;
+    width: 300px;
+    font-size: 18px;
+    
+  }
+  
+  .continent-btn:last-child {
+    margin-right: 0;
+  }
+
+  #europe-btn {
+    background-image: url(https://cf.bstatic.com/xdata/images/xphoto/2048x1536/12097111.jpg?k=ab8d257011c475ed67db40f6ad3dc6339a0ca882f606e5585365ab16411b00d1&o=);
+    background-color: rgba(241, 231, 231, 0.3); /* Transparencia: 0.5 (50%) */
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+  }
+
+  #southamerica-btn { 
+    background-image: url(https://topadventure.com/__export/1627419816086/sites/laverdad/img/2021/07/27/mejores_hoteles_en_playa_del_carmen_portada.jpg_888818160.jpg);
+    background-color: rgba(255, 255, 255, 0.3); /* Transparencia: 0.5 (50%) */
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+  }
+
+  #america-btn { 
+    background-image: url(  https://cloudfront-us-east-1.images.arcpublishing.com/infobae/SW65NULX6VCQZA3VQCNJBBMP4E.jpg);
+    background-color: rgba(241, 231, 231, 0.3); /* Transparencia: 0.5 (50%) */
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+  }
+
+  #allworld-btn { 
+    background-image: url(  https://www.kayak.com.ar/rimg/himg/07/cb/78/leonardo-1072693-mc-mcowc--mh_mcowc_pool_O-553385.jpg?width=720&height=576&crop=true);
+    background-color: rgba(241, 231, 231, 0.3); /* Transparencia: 0.5 (50%) */
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .text-btn { 
+    margin-top: 100px;
+    margin-right: 160px;
+  }
+
+  .text-quantity { 
+    font-size: 10px;
+    margin-right: 160px;
+  }
+

@@ -5,7 +5,9 @@ export const agregarHoteles = async (req, res) => {
   
 
     try {
-    
+      
+
+      
       const info =  await Hotels.find();
       console.log(info)
        

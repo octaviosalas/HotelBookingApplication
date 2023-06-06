@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+* { 
+ 
+  font-family: Poppins;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.app { 
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ececec;
+  background-image: linear-gradient(to bottom, #f2f2f2, #d7d4d4);
+  
+}
+
