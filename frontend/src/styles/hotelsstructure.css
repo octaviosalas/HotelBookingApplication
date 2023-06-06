@@ -1,0 +1,38 @@
+.container-american { 
+    margin: 30px;
+ 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.title { 
+    margin-left: 850px;
+}
+
+.structure-items { 
+   margin: 30px;
+}
+
+.ol { 
+    margin-right: 20px;
+}
+
+.servicies { 
+    margin-left: 70px;
+}
+
+.more-info { 
+    cursor: pointer;
+}
+
+.more-info:hover { 
+    color: rgb(187, 181, 181);
+}
+
+.div-load { 
+    margin-left: 850px;
+    margin-top: 300px;
+    background-color: #ececec;
+}
