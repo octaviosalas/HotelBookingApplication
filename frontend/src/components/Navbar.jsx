@@ -17,7 +17,7 @@ const NavBar = () => {
   return (
     <Navbar className="transparent-navbar" collapseOnSelect expand="lg">
       
-      <Navbar.Brand href="/" className='title-page'>Airbnb</Navbar.Brand><img src={plane} className='item-img'></img>
+      <Navbar.Brand href="/" className='title-page'>FindYourDestiny</Navbar.Brand><img src={plane} className='item-img'></img>
      
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
