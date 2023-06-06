@@ -1,57 +1,41 @@
-
-
-.sections-container {
-    display: flex;
-    justify-content: center;
- 
-  }
+.div-btns { 
   
-  .btns-container {
-    display: flex;
-    margin-top: 5vh;
-  }
-  
-  .btn-sections {
-    background-color: #ccc;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    margin-right: 20px;
-    margin-left: 20px;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-  }
-  
-  .btn-sections:last-child {
-    margin-right: 0;
-  }
+  margin-left: 100px;
+  width: 80%;
+}
 
-  .btn-sections { 
-    font-size: 19px;
-  }
+.btn-sections { 
+  margin-top: 50px;
+  margin-left: 220px;
+  height: 45px;
+  font-size: 18px;
+  background-color: #EEF1EF;
+  color: black;
+}
 
-  button:hover { 
-    background-color: rgb(143, 139, 139);
-    color: rgb(255, 249, 249);
-    margin-right: 20px;
+.btn-sections:hover { 
+  background-color: rgb(244, 237, 239);
+  color: black;
+}
 
-  }
+.img-btn { 
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
 
-  .icons-img { 
-    height: 30px;
-    width: 25px;
-    margin-right: 10px;
-  }
+.container-sections { 
+  background-color: #ECF0F1;
+}
+
+.text-container { 
+  font-family: Poppins;
+  margin-top: 80px;
   
-  @media (max-width: 600px) {
-    .btns-container {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    button {
-      margin-bottom: 10px;
-    }
-  }
+  margin-left: 100px;
+  width: 80%;
+}
+
+.text-happy { 
+  margin-left: 30px;
+}
