@@ -1,8 +1,9 @@
-import './App.css';
+
 import ContinentsItems from './components/ContinentsItems';
 import NavBar from './components/Navbar';
 import Sections from './components/Sections';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
           <NavBar/>
           <Sections />
           <ContinentsItems />
+       
+
     </div>
   );
 }
