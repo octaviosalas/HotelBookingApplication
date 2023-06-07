@@ -49,16 +49,16 @@ const HotelDetail = () => {
 
               <div className='container-img-slider-left'>
                  <Carousel className='img-detail-container'>
-                    <Carousel.Item > <img className="d-block w-100" src={hotel.img[0]}  alt="First slide" /> </Carousel.Item>
-                    <Carousel.Item> <img className="d-block w-100" src={hotel.img[1]} alt="Second slide"/></Carousel.Item>
-                    <Carousel.Item> <img className="d-block w-100" src={hotel.img[2]} alt="Third slide"/> </Carousel.Item>
+                    <Carousel.Item > <img className="d-block w-100 imgimg"  src={hotel.img[0]}  alt="First slide" /> </Carousel.Item>
+                    <Carousel.Item> <img className="d-block w-100 imgimg" src={hotel.img[1]} alt="Second slide"/></Carousel.Item>
+                    <Carousel.Item> <img className="d-block w-100 imgimg" src={hotel.img[2]} alt="Third slide"/> </Carousel.Item>
                  </Carousel> 
               </div>
            
           <Accordion defaultActiveKey="0">
 
                   <Accordion.Item eventKey="0">
-                      <Accordion.Header>Location Data</Accordion.Header>
+                      <Accordion.Header className='acordion'>Location Data</Accordion.Header>
                           <Accordion.Body>
                                <p><b>Country:</b> {hotel.country}</p> 
                                 <br/>
@@ -69,7 +69,7 @@ const HotelDetail = () => {
                  </Accordion.Item>
 
                 <Accordion.Item eventKey="1">
-                   <Accordion.Header>Servicies</Accordion.Header>
+                   <Accordion.Header className='acordion'>Servicies</Accordion.Header>
                       <Accordion.Body>
                       {hotel.servicies[0]}<br />
                       {hotel.servicies[1]}<br />
@@ -81,7 +81,7 @@ const HotelDetail = () => {
                </Accordion.Item>
 
                <Accordion.Item eventKey="2">
-                   <Accordion.Header>Contact</Accordion.Header>
+                   <Accordion.Header className='acordion'>Contact</Accordion.Header>
                       <Accordion.Body>
                         <p><b>Telephone: </b> {hotel.telephone}</p> 
                      </Accordion.Body>

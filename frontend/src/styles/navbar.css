@@ -34,3 +34,7 @@
   .item-nav { 
     margin-right: 20px;
   }
+
+  .lnk { 
+    text-decoration: none;
+  }

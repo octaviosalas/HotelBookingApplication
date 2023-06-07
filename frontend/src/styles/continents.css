@@ -62,5 +62,14 @@
  height: 250px;
  border: 1px solid rgb(189, 186, 186);
  border-radius: 50%;
+}
 
+.btn-sectionn { 
+  color: black;
+  background-color: white;
+}
+
+.btn-sectionn:hover { 
+  background-color: #010101;
+  color: white;
 }

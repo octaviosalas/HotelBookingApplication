@@ -19,7 +19,7 @@ const ContinentsItems = () => {
           <Card className='card-continent'>
              <Card.Img  className='card-img' src={europe} />
                <Card.Body>
-               <Link to={"/europeHotels"}> <Card.Title><button className='btn-section'>European Hotels</button></Card.Title></Link>
+               <Link to={"/europeHotels"}> <Card.Title><button className='btn-sectionn'>European Hotels</button></Card.Title></Link>
                </Card.Body>
                <Card.Footer>
                          <small className="text-muted">More than 100 Hotels</small>
@@ -29,7 +29,7 @@ const ContinentsItems = () => {
           <Card className='card-continent'> 
              <Card.Img  className='card-img' src={south}/>
                <Card.Body>
-               <Link to={"/southAmericaHotels"}> <Card.Title><button className='btn-section'>SouthAmerica Hotels</button></Card.Title></Link>
+               <Link to={"/southAmericaHotels"}> <Card.Title><button className='btn-sectionn'>SouthAmerica Hotels</button></Card.Title></Link>
                </Card.Body>
                <Card.Footer>
                          <small className="text-muted">More than 100 Hotels</small>
@@ -39,7 +39,7 @@ const ContinentsItems = () => {
           <Card className='card-continent'> 
              <Card.Img  className='card-img' src={eeuu} />
                <Card.Body>
-               <Link to={"/americanHotels"}><Card.Title><button className='btn-section'>American Hotels</button></Card.Title></Link>
+               <Link to={"/americanHotels"}><Card.Title><button className='btn-sectionn'>American Hotels</button></Card.Title></Link>
                </Card.Body>
                <Card.Footer>
                          <small className="text-muted">More than 100 Hotels</small>
@@ -49,7 +49,7 @@ const ContinentsItems = () => {
           <Card className='card-continent'>
              <Card.Img  className='card-img' src={world} />
                <Card.Body>
-               <Link to={"/allHotels"}> <Card.Title><button className='btn-section'>All Hotels</button></Card.Title></Link>
+               <Link to={"/allHotels"}> <Card.Title><button className='btn-sectionn'>All Our Hotels</button></Card.Title></Link>
                     
                </Card.Body>
                <Card.Footer>

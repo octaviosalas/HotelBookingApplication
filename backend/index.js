@@ -3,6 +3,7 @@ import bodyParser from "body-parser"
 import cors from "cors"
 import connectDataBase from "./database/connectdb.js"
 import hotelsRoutes from "./routes/hotels.routes.js"
+import userRoutes from "./routes/users.routes.js"
 
 
 
@@ -18,6 +19,7 @@ app.use(express.json({type:"*/*"}))
 app.use(express.urlencoded({extended:true}))
 
 app.use(hotelsRoutes)
+app.use(userRoutes)
 
 
 

@@ -1,8 +1,4 @@
 
-.container-img-slider-left { 
-    float: left;
-}
-
 .nav { 
     margin-top: 0px;
 }
@@ -16,7 +12,13 @@
     margin-left: 50px;
 }
 
+.img-detail-container { 
+    height: 30vh;
+}
 
+.imgimg { 
+    height: 30vh;
+}
 
 .detail-container { 
 
@@ -29,4 +31,8 @@
 .btn-reserv { 
    margin-left: 260px;
    
+}
+
+.acordion:hover { 
+    color: red;
 }

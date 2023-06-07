@@ -11,7 +11,7 @@ const StructureItems = ({hotels}) => {
     <>
     <div className='structure-items'> 
             <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={hotels.img[0]} />
+      <Card.Img variant="top" className='img-item' src={hotels.img[0]} />
       <Card.Body>
         <Card.Title>{hotels.name}</Card.Title>
         <Card.Text>
