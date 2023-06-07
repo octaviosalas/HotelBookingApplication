@@ -1,11 +1,32 @@
-.img-detail-container { 
-    width: 400px;
-    height: 400px;
+
+.container-img-slider-left { 
+    float: left;
 }
 
 .nav { 
     margin-top: 0px;
 }
-.div-detail { 
+.container-detail-right{ 
+    margin: 50px;
+    font-size: 13px;
+    font-family: poppins;
+}
+
+.hotel-name { 
+    margin-left: 50px;
+}
+
+
+
+.detail-container { 
+
+    display: inline-block;
+    height: 500px;
+    width: 600px;
     margin-top: 100px;
+}
+
+.btn-reserv { 
+   margin-left: 260px;
+   
 }

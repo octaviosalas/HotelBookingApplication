@@ -1,9 +1,6 @@
-
-
 * { 
-
   font-family: Poppins;
-  box-sizing: border-box;
+ 
   outline: none;
 }
 
@@ -14,6 +11,6 @@
   flex-direction: column;
   align-items: center;
   background-color: #ECF0F1;
-  background-image: linear-gradient(to bottom, #f2f2f2, #d7d4d4);
+  
   
 }

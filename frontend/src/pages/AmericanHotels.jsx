@@ -36,15 +36,12 @@ const AmericanHotels = () => {
   return (
     <div > 
 
-       {load ? <div className='div-load'>
-         <p>Loading</p>
-         <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span> </Spinner>
-         </div>
+       {load ? <div className='loading-div'>
+                 <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span> </Spinner>
+               </div>
           :
          <> 
-       <div>
-            <NavBar />
-          </div>
+       <NavBar />
 
          <div className='title-container'>
                  <h3 className='title'>American Hotels <img src={usa}></img></h3>
@@ -53,11 +50,12 @@ const AmericanHotels = () => {
          <div className='container-american'>
             {hotels.map((h) => <StructureItems hotels={h}/>)}
          </div>
-          </> 
-           }
+         </> 
+       }
           
     </div>
   )
 }
 
 export default AmericanHotels
+

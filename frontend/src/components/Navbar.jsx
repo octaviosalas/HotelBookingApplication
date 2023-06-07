@@ -15,10 +15,10 @@ const NavBar = () => {
   }
 
   return (
+
+    <div className='nav-container'>
     <Navbar className="transparent-navbar" collapseOnSelect expand="lg">
-      
       <Navbar.Brand href="/" className='title-page'>FindYourDestiny</Navbar.Brand><img src={plane} className='item-img'></img>
-     
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
@@ -40,8 +40,13 @@ const NavBar = () => {
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
+
+    </Navbar>
+
+    </div>
    
-  </Navbar>
+
+ 
    
    
   )

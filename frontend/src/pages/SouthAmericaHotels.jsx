@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import StructureItems from '../components/StructureItems'
 import NavBar from '../components/Navbar'
 import Spinner from 'react-bootstrap/Spinner'; //bootstrap spinner load
+import "../styles/hotelsstructure.css"
 
 const SouthAmericaHotels = () => {
 
@@ -33,27 +34,24 @@ const SouthAmericaHotels = () => {
 
 
   return (
-    <div > 
+    <div> 
 
-   {load ? <div className='div-load'>
+         {load ? <div className='loading-div'>
+                    <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span> </Spinner>
+                 </div>
+               : 
+              <>
+      
+            <NavBar />
+   
+                   <div className='title-container'>
+                       <h3 className='title'>South America Hotels</h3>
+                   </div>
 
-     <p>Loading</p>
-     <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span> </Spinner>
-     </div> 
-        : 
-        <>
-      <div>
-        <NavBar />
-      </div>
-
-     <div className='title-container'>
-             <h3 className='title'>South America Hotels</h3>
-     </div>
-
-     <div className='container-american'>
-        {hotels.map((h) => <StructureItems hotels={h}/>)}
-     </div>
-     </> 
+                   <div className='container-american'>
+                      {hotels.map((h) => <StructureItems hotels={h}/>)}
+                   </div>
+           </> 
    }
       
 </div>

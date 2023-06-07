@@ -2,9 +2,9 @@ import React from 'react'
 import axios from "axios"
 import { useState, useEffect } from 'react'
 import StructureItems from '../components/StructureItems'
-import "../styles/hotelsstructure.css"
 import NavBar from '../components/Navbar'
 import Spinner from 'react-bootstrap/Spinner'; //bootstrap spinner load
+import "../styles/hotelsstructure.css"
 
 const EuropeHotels = () => {
 
@@ -35,17 +35,13 @@ const EuropeHotels = () => {
 
   return (
    <div > 
-
-   {load ? <div className='div-load'>
-
-     <p>Loading</p>
-     <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span> </Spinner>
-     </div>
-      : 
-      <>
-     <div>
-        <NavBar />
-      </div>
+        {load ? <div className='loading-div'>
+                    <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span> </Spinner>
+                </div>
+             : 
+             <>
+          <NavBar />
+ 
 
      <div className='title-container'>
              <h3 className='title'>Europe Hotels</h3>
@@ -61,3 +57,7 @@ const EuropeHotels = () => {
 }
 
 export default EuropeHotels
+
+
+
+

@@ -38,17 +38,15 @@ const AllWorldHotels = () => {
 
 
   return (
-    <div > 
-       {load ? <div className='div-load'>
-          <p>Loading</p>
-          <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span> </Spinner>
-         </div>
+   <div > 
+       {load ? <div className='loading-div'>        
+                    <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span></Spinner>
+               </div>
             : 
             <>
-         <div>
-            <NavBar />
-         </div>
 
+            <NavBar />
+      
          <div className='title-container'>
             <h3 className='title'>All Our Hotels</h3>
          </div>
@@ -58,7 +56,7 @@ const AllWorldHotels = () => {
          </div> 
        </> 
        }  
-    </div>
+  </div>
   )
 }
 
