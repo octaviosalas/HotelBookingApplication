@@ -58,8 +58,8 @@ const HotelDetail = () => {
           <Accordion defaultActiveKey="0">
 
                   <Accordion.Item eventKey="0">
-                      <Accordion.Header className='acordion'>Location Data</Accordion.Header>
-                          <Accordion.Body>
+                      <Accordion.Header >Location Data</Accordion.Header>
+                          <Accordion.Body >
                                <p><b>Country:</b> {hotel.country}</p> 
                                 <br/>
                                 <p><b>City:</b> {hotel.city}</p> 
@@ -69,7 +69,7 @@ const HotelDetail = () => {
                  </Accordion.Item>
 
                 <Accordion.Item eventKey="1">
-                   <Accordion.Header className='acordion'>Servicies</Accordion.Header>
+                   <Accordion.Header >Servicies</Accordion.Header>
                       <Accordion.Body>
                       {hotel.servicies[0]}<br />
                       {hotel.servicies[1]}<br />
@@ -81,7 +81,7 @@ const HotelDetail = () => {
                </Accordion.Item>
 
                <Accordion.Item eventKey="2">
-                   <Accordion.Header className='acordion'>Contact</Accordion.Header>
+                   <Accordion.Header >Contact</Accordion.Header>
                       <Accordion.Body>
                         <p><b>Telephone: </b> {hotel.telephone}</p> 
                      </Accordion.Body>

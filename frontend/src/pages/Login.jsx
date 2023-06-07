@@ -5,6 +5,7 @@ import pngemail from "../img/email.png"
 import pngpassword from "../img/password.png"
 import NavBar from '../components/Navbar';
 import axios from "axios"
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react'
@@ -44,7 +45,6 @@ const Login = () => {
   return (
     <>
 
-    <NavBar />
        <h1 className='title-login'>You have successfully registered. Now you can login</h1>
      <div className="formContainer">
 
@@ -81,6 +81,7 @@ const Login = () => {
                </div>
 
                    <button type='button' className='btn-confirm' title='register' onClick={() => logIn()}> Log In</button>
+                   <Link to={"/"}><p>If you dont have a count, lets Register!</p></Link>
 
                
         </form> 

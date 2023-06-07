@@ -46,16 +46,29 @@ const NavBar = ({}) => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-        <Link to={`/main/${userCtx.userId}`} className='lnk'><Nav.Link className='nav-sec'>Home</Nav.Link></Link>
-          <NavDropdown title="Search"  id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Hotels</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-            Apartaments
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Oferts</NavDropdown.Item>
-          
+         <Link to={`/main/${userCtx.userId}`} className='lnk'><Nav.Link className='nav-sec'>Home</Nav.Link></Link>
 
+          <NavDropdown title="Filter"  id="collasible-nav-dropdown">
+                 <NavDropdown title="By Price"> 
+                    <NavDropdown.Item href="#action/3.2"> 20-50 USD</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3"> 50-80 USD</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3"> 80-200 USD</NavDropdown.Item>
+                 </NavDropdown>
+
+                 <NavDropdown title="By Stars"> 
+                    <NavDropdown.Item href="#action/3.2"> ⭐⭐⭐</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3"> ⭐⭐⭐⭐</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3"> ⭐⭐⭐⭐⭐</NavDropdown.Item>
+                 </NavDropdown>
+
+                 <NavDropdown title="By Punctuation"> 
+                    <NavDropdown.Item href="#action/3.2">6+ acceptable  </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">7+ Good </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">8+ VeryGood </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">9+ Excelent </NavDropdown.Item>
+                 </NavDropdown>
           </NavDropdown>
+
         </Nav>
          
            
@@ -67,8 +80,12 @@ const NavBar = ({}) => {
            </Nav>
                            :
             <Nav>
-                 <Nav.Link eventKey={2} href="#memes" className='item-nav' title='sign in'>{userName}</Nav.Link>
-                 <Nav.Link eventKey={2} href="#memes" className='item-nav' title='sign in'>Sign Of</Nav.Link>
+                 <NavDropdown title={userName}  id="collasible-nav-dropdown">
+                 <NavDropdown.Item className='nav-select'>My Reservations</NavDropdown.Item>
+                 <NavDropdown.Item className='nav-select'>Favourites</NavDropdown.Item>
+                 <NavDropdown.Item className='nav-select'>Setting</NavDropdown.Item>
+                 </NavDropdown>
+                 <Link to={"/login"} className='lnk'><Nav.Link eventKey={2} href="#memes" className='item-nav' title='sign in'>Sign Of</Nav.Link></Link> 
             </Nav>
     }
    

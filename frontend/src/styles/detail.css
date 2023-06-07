@@ -28,11 +28,22 @@
     margin-top: 100px;
 }
 
-.btn-reserv { 
-   margin-left: 260px;
-   
+.nav-select:hover { 
+    text-decoration: underline;
 }
 
-.acordion:hover { 
-    color: red;
+.b:hover{ 
+    background-color: green;
+}
+
+.btn-reserv { 
+   margin-left: 210px;
+   color: black;
+   background-color: lightblue;
+   width: 20vh;
+}
+
+.btn-reserv:hover { 
+    background-color: black;
+    color: lightblue;
 }

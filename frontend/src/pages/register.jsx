@@ -40,7 +40,7 @@ const Register = () => {
   return (
     <>
 
-    <NavBar />
+    
      <div className="formContainer">
 
          <h3 className='form-title'>Welcome to FindYourDestinity</h3>
