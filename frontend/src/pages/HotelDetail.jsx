@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from "axios"
 import Carousel from 'react-bootstrap/Carousel';
-import "../styles/detail.css"
+import "../styles/detaill.css"
 import Spinner from 'react-bootstrap/Spinner'; //bootstrap spinner load
 import NavBar from '../components/Navbar';
 import Accordion from 'react-bootstrap/Accordion';
@@ -69,7 +69,7 @@ const HotelDetail = () => {
                  </Accordion.Item>
 
                 <Accordion.Item eventKey="1">
-                   <Accordion.Header >Servicies</Accordion.Header>
+                <Accordion.Header id="location-header">Servicies</Accordion.Header>
                       <Accordion.Body>
                       {hotel.servicies[0]}<br />
                       {hotel.servicies[1]}<br />

@@ -46,7 +46,7 @@ const NavBar = ({}) => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-         <Link to={`/main/${userCtx.userId}`} className='lnk'><Nav.Link className='nav-sec'>Home</Nav.Link></Link>
+        <Nav.Link href={`/main/${userCtx.userId}`}  className='nav-sec'>Home</Nav.Link>
 
           <NavDropdown title="Filter"  id="collasible-nav-dropdown">
                  <NavDropdown title="By Price"> 

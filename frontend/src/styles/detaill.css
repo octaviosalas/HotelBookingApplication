@@ -28,6 +28,17 @@
     margin-top: 100px;
 }
 
+#location-header {
+    background-color: inherit; /* o el color de fondo deseado */
+    color: inherit; /* o el color de texto deseado */
+  }
+
+  .Accordion.Header {
+    background-color: inherit !important; /* o el color de fondo deseado */
+    color: inherit !important; /* o el color de texto deseado */
+  }
+
+
 .nav-select:hover { 
     text-decoration: underline;
 }
