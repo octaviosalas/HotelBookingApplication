@@ -6,6 +6,7 @@ import "../styles/detaill.css"
 import Spinner from 'react-bootstrap/Spinner'; //bootstrap spinner load
 import NavBar from '../components/Navbar';
 import Accordion from 'react-bootstrap/Accordion';
+import Reserves from '../components/Reserves';
 
 const HotelDetail = () => {
 
@@ -89,6 +90,10 @@ const HotelDetail = () => {
          </Accordion>
          <br />
          <button className='btn-reserv'>Reserv</button>
+        </div>
+
+        <div>
+           <Reserves />
         </div>
           </>
          }

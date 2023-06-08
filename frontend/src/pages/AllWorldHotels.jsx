@@ -1,11 +1,11 @@
 import React from 'react'
 import axios from "axios"
 import { useState, useEffect } from 'react'
-import StructureItems from '../components/StructureItems'
-import "../styles/hotelsstructure.css"
+import "../styles/structurehotels.css"
 import usa from "../img/usa.png"
 import NavBar from '../components/Navbar'
 import Spinner from 'react-bootstrap/Spinner'; //bootstrap spinner load
+import StructureForHotels from '../components/StructureForHotels'
 
 
 
@@ -51,8 +51,8 @@ const AllWorldHotels = () => {
             <h3 className='title'>All Our Hotels</h3>
          </div>
 
-         <div className='container-american'>
-            {hotels.map((h) => <StructureItems hotels={h}/>)}
+         <div className='container-americann'>
+            {hotels.map((h) => <StructureForHotels hotels={h}/>)}
          </div> 
        </> 
        }  

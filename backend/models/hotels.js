@@ -34,7 +34,10 @@ const hotelsSchema = mongoose.Schema( {
     },
     stars: { 
         type: Number
-    } 
+    },
+    puntuaction: { 
+        type: String
+    }
    
 
 

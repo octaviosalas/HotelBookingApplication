@@ -1,0 +1,42 @@
+.react-calendar__navigation button {
+    color: black;
+  }
+
+  .react-calendar__navigation button:enabled:hover,
+  .react-calendar__navigation button:enabled:focus {
+    background-color: #95d5ff;
+  }
+
+  .react-calendar__navigation button[disabled] {
+    color: #aaaaaa;
+  }
+
+  .react-calendar__year-view {
+    background-color: #f0f0f0;
+  }
+
+  .react-calendar__decade-view {
+    background-color: #f0f0f0;
+  }
+
+  .react-calendar__month-view {
+    background-color: #f0f0f0;
+  }
+
+  .react-calendar__year-view .react-calendar__tile,
+  .react-calendar__decade-view .react-calendar__tile,
+  .react-calendar__month-view .react-calendar__tile {
+    color: black;
+  }
+
+  .react-calendar__tile--active,
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:focus {
+    background-color: #eaf6ff;
+    color: black;
+  }
+
+  .react-calendar__tile--now,
+  .react-calendar__tile--now:enabled:hover {
+    background-color: #f0f0f0;
+  }
