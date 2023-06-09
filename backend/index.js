@@ -4,6 +4,7 @@ import cors from "cors"
 import connectDataBase from "./database/connectdb.js"
 import hotelsRoutes from "./routes/hotels.routes.js"
 import userRoutes from "./routes/users.routes.js"
+import { agregarHoteles } from "./controllers/hotels.controllers.js"
 
 
 
@@ -30,6 +31,7 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`El servidor esta funcionando correctamente en el puerto ${port} ✔✔`)
    connectDataBase()
+    
    
   })
 

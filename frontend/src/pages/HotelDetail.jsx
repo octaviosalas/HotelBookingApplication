@@ -166,9 +166,9 @@ const HotelDetail = () => {
                    <Accordion.Item eventKey="0">
                               <Accordion.Body>    
                                    <img src={hotel.img[3]} className='acordion-pics-hotel' onClick={() => setModal(false)}></img>
-                                   <img src ={hotel.img[4]} className='acordion-pics-hotel'></img>
-                                   <img src={hotel.img[5]} className='acordion-pics-hotel'></img>
-                                   <img src={hotel.img[6]} className='acordion-pics-hotel'></img>
+                                   <img src ={hotel.img[4]} className='acordion-pics-hotel' onClick={() => setModal(false)}></img>
+                                   <img src={hotel.img[5]} className='acordion-pics-hotel' onClick={() => setModal(false)}></img>
+                                   <img src={hotel.img[6]} className='acordion-pics-hotel' onClick={() => setModal(false)}></img>
                                    <p className='close' onClick={() => setAcordionPhotos(true)}>Close Photos</p> 
                               </Accordion.Body>
                    </Accordion.Item>
@@ -176,12 +176,10 @@ const HotelDetail = () => {
          </div>
 
          <div>
-              {modal ? null : <CustomModal onClose={() => setModal(true)} body={[hotel.img[3], hotel.img[4], hotel.img[5], hotel.img[6]]}/>}
+           {modal ? null : <CustomModal onClose={() => setModal(true)} title={hotel.name} body={[hotel.img[3], hotel.img[4], hotel.img[5], hotel.img[6]]}/>}
          </div>
 
-              
-          
-         <button className='btn-reserv'>Reserv</button>
+            <button className='btn-reserv'>Reserv</button>
         </div>
 
     
