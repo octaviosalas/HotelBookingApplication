@@ -1,6 +1,6 @@
 import React from 'react'
 import "../styles/register.css"
-import pngname from "../img/name.png"
+
 import pngemail from "../img/email.png"
 import pngpassword from "../img/password.png"
 import NavBar from '../components/Navbar';
@@ -53,13 +53,7 @@ const Login = () => {
 
          <form >
 
-                 <div className="inputContainer">
-                   <div className="left">
-                       <label htmlFor="nombre">Nombre</label>
-                       <input name="nombre" id="nombre" type="text" placeholder="Nombre..." autoComplete="off" value={name} onChange={(e) => setName(e.target.value)} />
-                    </div>
-                       <img src={pngname} alt="" />
-                </div>
+                 
 
 
                  <div className="inputContainer">

@@ -37,6 +37,9 @@ const hotelsSchema = mongoose.Schema( {
     },
     puntuaction: { 
         type: String
+    },
+    email: { 
+        type: String
     }
    
 

@@ -37,7 +37,7 @@ const StructureForHotels = ({hotels}) => {
                                     <p>Three Nigths: 💸 {hotels.averagePrice * 3} USD</p>
                                     <p>Six Nigths: 💸 {hotels.averagePrice * 6} USD</p>
                                     <br />
-                                   <Link to={`/hotelDetail/${hotels.id}`}><button className='btn-reserv'>Reserv</button></Link> 
+                                   <Link to={`/hotelDetail/${hotels.id}`}><button className='btn-reserv'>View More</button></Link> 
                                 </Card.Text>
                                 
                          </Card.Body>

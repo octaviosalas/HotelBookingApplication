@@ -13,6 +13,7 @@ import { UserProvider } from './store/usercontext';
 
 
 
+
 function App() {
   return (
 
@@ -34,6 +35,8 @@ function App() {
            <Route path='/europeHotels' element={<EuropeHotels />}></Route> 
            <Route path='/allHotels' element={<AllWorldHotels />}></Route> 
            <Route path='/hotelDetail/:id' element={<HotelDetail />}></Route> 
+        
+          
          </Routes>
 
       </UserProvider>
