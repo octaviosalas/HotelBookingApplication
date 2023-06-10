@@ -1,3 +1,5 @@
+
+
 import mongoose from "mongoose";
 
 
@@ -37,6 +39,9 @@ const hotelsSchema = mongoose.Schema( {
     },
     puntuaction: { 
         type: String
+    },
+    email: { 
+        type: String
     }
    
 
@@ -46,3 +51,4 @@ const hotelsSchema = mongoose.Schema( {
 const Hotels = mongoose.model("Hotels", hotelsSchema)
 
 export default Hotels;
+
