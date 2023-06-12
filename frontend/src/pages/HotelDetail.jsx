@@ -178,15 +178,11 @@ const HotelDetail = () => {
          </div>
 
          <div>
-           {modal ? null : <CustomModal onClose={() => setModal(true)} title={hotel.name} body={[hotel.img[3], hotel.img[4], hotel.img[5], hotel.img[6]]}/>}
+           {modal ? null : <CustomModal onClose={() => setModal(true)} title={hotel.name} body={[hotel.img[0], hotel.img[1], hotel.img[2], hotel.img[3], hotel.img[4], hotel.img[5], hotel.img[6]]}/>}
          </div>
 
             <button className='btn-reserv'>Reserv</button>
         </div>
-
-    
-
-  
           </>
          }
          

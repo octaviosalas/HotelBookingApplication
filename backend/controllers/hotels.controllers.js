@@ -1,4 +1,6 @@
 import Hotels from "../models/hotels.js"
+import Favourites from "../models/favouriteHotels.js"
+import mongoose from "mongoose"
 
 export const agregarHoteles = async (req, res) => {
    const hoteles = [
@@ -75,5 +77,64 @@ export const getHotelsById = async (req, res) => {
          .catch((err) => { 
             console.log(err)
          })
-   
 }
+
+export const saveHotelByFavourite = async (req, res) => { 
+    const {id, userId, name, country, city, adress, servicies, img, averagePrice, telephone, email, stars} = req.body
+    console.log(req.body)
+
+    try {
+        const newFav = new Favourites ({ 
+          id: id,
+          userId: userId,
+          name: name,
+          country: country, 
+          city: city,
+          adress: adress,
+          servicies: servicies, 
+          img: img,
+          averagePrice: averagePrice,
+          telephone: telephone,
+          email: email,
+          stars: stars
+        })
+        await newFav.save()
+        res.json({message: "Saved in Favourites"})
+    } catch (err) {
+       console.log(err)
+       res.send(err)
+    }
+}
+
+
+export const getFavourites = async (req, res) => { 
+      const {userId} = req.params
+     try {
+        const searchFavourites = await Favourites.find({userId: userId}) 
+        res.send(searchFavourites)
+     } catch (error) {
+        console.log(error)
+     }
+} 
+
+export const deleteFavorite = async (req, res) => { 
+       try {    
+            const hotelToBeDeleted = (req.body.id)
+            await Favourites.findByIdAndDelete(hotelToBeDeleted);
+            res.send("Producto Eliminado de la seccion de Favoritos")
+       } catch (error) {
+           console.log(error)
+     }
+}
+
+
+/*
+  export const deleteFavourite = async (req, res) => { 
+    try {
+        await Favs.findByIdAndDelete(req.body.id);
+        res.send("Producto Eliminado de la seccion de Favoritos")
+     } catch (error) {
+        console.log(error)
+     }
+  }
+*/

@@ -10,6 +10,13 @@ import HotelDetail from './pages/HotelDetail';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import { UserProvider } from './store/usercontext';
+import FavouritesHotels from './pages/FavouritesHotels';
+import TwentyToFifty from './pages/TwentyToFifty';
+import FiftyToEighty from "./pages/FiftyToEighty"
+import EightyToTwoHundred from './pages/EightyToTwoHundred';
+import ThreeStars from './pages/ThreeStars';
+import FourStarsHotels from './pages/FourStarsHotels';
+import FiveStars from './pages/FiveStars';
 
 
 
@@ -35,6 +42,14 @@ function App() {
            <Route path='/europeHotels' element={<EuropeHotels />}></Route> 
            <Route path='/allHotels' element={<AllWorldHotels />}></Route> 
            <Route path='/hotelDetail/:id' element={<HotelDetail />}></Route> 
+           <Route path='/favourites/:userId' element={<FavouritesHotels />}></Route> 
+           <Route path='/twentyToFifty' element={<TwentyToFifty />}></Route> 
+           <Route path='/fiftyToEighty' element={<FiftyToEighty />}></Route>
+           <Route path='/eightyToTwoHundred' element={<EightyToTwoHundred />}></Route>
+           <Route path='/threeStars' element={<ThreeStars />}></Route>
+           <Route path='/fourStars' element={<FourStarsHotels />}></Route>
+           <Route path='/fiveStars' element={<FiveStars />}></Route>
+           
         
           
          </Routes>
