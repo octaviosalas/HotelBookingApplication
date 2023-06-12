@@ -11,12 +11,14 @@ import { useEffect } from 'react';
 import axios from "axios"
 import { useContext } from 'react'
 import { UserContext } from '../store/usercontext.js'
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = ({}) => {
 
        const [userName, setUserName] = useState(true)
        const [didntGotUserName, setDidntGotUserName] = useState(true)
        const userCtx = useContext(UserContext)
+       const navigate = useNavigate()
        console.log(userCtx.userId)
 
     const getUserNameToNavBar = () => { 
@@ -36,6 +38,15 @@ const NavBar = ({}) => {
      getUserNameToNavBar()
    }, [])
 
+   const goFavourites = () => { 
+    navigate(`/favourites/${userCtx.userId}`)
+   }
+
+   const twentyToFifty = () => { 
+    navigate("/twentyToFifty") 
+  }
+   
+
   
   
   return (
@@ -50,15 +61,15 @@ const NavBar = ({}) => {
 
           <NavDropdown title="Filter"  id="collasible-nav-dropdown">
                  <NavDropdown title="By Price"> 
-                    <NavDropdown.Item href="#action/3.2"> 20-50 USD</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3"> 50-80 USD</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3"> 80-200 USD</NavDropdown.Item>
+                    <NavDropdown.Item   href="/twentyToFifty"> 20-50 USD</NavDropdown.Item>
+                    <NavDropdown.Item  href="/fiftyToEighty"> 50-80 USD</NavDropdown.Item>
+                    <NavDropdown.Item href="/eightyToTwoHundred"> 80-200 USD</NavDropdown.Item>
                  </NavDropdown>
 
                  <NavDropdown title="By Stars"> 
-                    <NavDropdown.Item href="#action/3.2"> ⭐⭐⭐</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3"> ⭐⭐⭐⭐</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3"> ⭐⭐⭐⭐⭐</NavDropdown.Item>
+                    <NavDropdown.Item href="/threeStars"> ⭐⭐⭐ </NavDropdown.Item>
+                    <NavDropdown.Item href="/fourStars"> ⭐⭐⭐⭐</NavDropdown.Item>
+                    <NavDropdown.Item href="/fiveStars"> ⭐⭐⭐⭐⭐</NavDropdown.Item>
                  </NavDropdown>
 
                  <NavDropdown title="By Punctuation"> 
@@ -82,7 +93,7 @@ const NavBar = ({}) => {
             <Nav>
                  <NavDropdown title={userName}  id="collasible-nav-dropdown">
                  <NavDropdown.Item className='nav-select'>My Reservations</NavDropdown.Item>
-                 <NavDropdown.Item className='nav-select'>Favourites</NavDropdown.Item>
+                   <NavDropdown.Item onClick={() => goFavourites()} className='nav-select'>Favourites</NavDropdown.Item>
                  <NavDropdown.Item className='nav-select'>Setting</NavDropdown.Item>
                  </NavDropdown>
                  <Link to={"/login"} className='lnk'><Nav.Link eventKey={2} href="#memes" className='item-nav' title='sign in'>Sign Of</Nav.Link></Link> 

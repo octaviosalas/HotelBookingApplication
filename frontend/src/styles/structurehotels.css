@@ -72,5 +72,26 @@
 
 .btn-reserv { 
     align-items: center;
+    margin-left: 33vh;
 
+}
+
+.img-fav-icon { 
+   float: right;
+   position: relative;
+   bottom: 4vh;
+   cursor: pointer;
+}
+
+.load { 
+    margin-top: 20vh;
+    margin-left: 25vh;
+}
+
+.loading-text { 
+    margin-right: 10vh;
+}
+
+.title { 
+    font-size: 1.9vh;
 }

@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -8,16 +6,52 @@ import Accordion from 'react-bootstrap/Accordion';
 import Nav from 'react-bootstrap/Nav';
 import "../styles/structurehotels.css"
 import { Link } from 'react-router-dom';
+import favIcon from "../img/favourite.png"
+import { useContext, useState, useEffect } from 'react'
+import { UserContext } from '../store/usercontext.js'
+import axios from 'axios';
+import Alert from 'react-bootstrap/Alert';
 
 
 
 const StructureForHotels = ({hotels}) => {
+
+   const userCtx = useContext(UserContext)
+   const [message, setMessage] = useState(true)
+  
 
     const getStarRating = (stars) => {
         const starSymbol = '⭐';
         const starRating = Array.from({ length: stars }, () => starSymbol).join('');
         return starRating;
       };
+
+      const saveHotelLikeFavourite = () => { 
+         const hotelSelected = { 
+            id: hotels.id,
+            userId: userCtx.userId,
+            name: hotels.name,
+            averagePrice: hotels.averagePrice,
+            stars: hotels.stars,
+            servicies: [hotels.servicies[0], hotels.servicies[1], hotels.servicies[2], hotels.servicies[3], hotels.servicies[4], hotels.servicies[5], hotels.servicies[6]],
+            img: [hotels.img[0], hotels.img[1], hotels.img[2]],
+            country: hotels.country,
+            adress: hotels.adress,
+            city: hotels.city,
+            telephone: hotels.telephone,
+            email: hotels.email,
+
+         }
+         axios.post("http://localhost:4000/favouritesHotels", hotelSelected)
+              .then(({data}) => {
+               setMessage(false)
+               console.log(data)
+               setTimeout(() => { 
+                    setMessage(true)
+               }, 1900)
+               })
+              .catch((err) => {console.log(err)})
+      }
 
 
   return (
@@ -31,6 +65,7 @@ const StructureForHotels = ({hotels}) => {
                  </Carousel> 
                           <Card.Body variant="right" className='body-card'>
                              <Card.Title className='title-cart'>{hotels.name}</Card.Title>
+                             { message ? <img src={favIcon} className='img-fav-icon' title='Save in Favourites' onClick={() => saveHotelLikeFavourite()}></img> :<Alert variant="success"><p>The Hotel was saved correctly in your favorites ✔</p></Alert>}
                                  <Card.Text>
                                     <b className='stars'>{getStarRating(hotels.stars)} </b>
                                     <p>Prices may vary depending on the room chosen</p> 
@@ -70,7 +105,8 @@ const StructureForHotels = ({hotels}) => {
                                     <Accordion.Item eventKey="3">
                                       <Accordion.Header className='btn-sectionn' > <b className='btn-b'>Contact</b></Accordion.Header>
                                       <Accordion.Body >  
-                                                <p> 📞 Tel: {hotels.telephone}</p>                                            
+                                                <p> 📞 Tel: {hotels.telephone}</p>       
+                                                <p> ✉ Email: {hotels.email} </p>                                     
                                        </Accordion.Body>
                                       <Accordion.Body >
                                            
