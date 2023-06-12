@@ -8,6 +8,7 @@ import Spinner from 'react-bootstrap/Spinner'; //bootstrap spinner load
 import NavBar from '../components/Navbar.jsx';
 import "../styles/structurehotels.css"
 import { Link } from 'react-router-dom';
+import StructureFavorites from '../components/StructureFavorites.jsx';
 
 const FavouritesHotels = () => {
  
@@ -49,7 +50,7 @@ const FavouritesHotels = () => {
         {spin ? 
             <div className='load'>
                    <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span> </Spinner>
-            </div>   :   favourites.map((f) => <StructureForHotels hotels={f}/>)}
+            </div>   :   favourites.map((f) => <StructureFavorites hotels={f}/>)}
 
            {msj &&  <div className='loading-div'>
                        <p>At the moment you have not saved hotels in your favorites list.</p>

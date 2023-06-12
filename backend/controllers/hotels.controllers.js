@@ -1,5 +1,6 @@
 import Hotels from "../models/hotels.js"
 import Favourites from "../models/favouriteHotels.js"
+import mongoose from "mongoose"
 
 export const agregarHoteles = async (req, res) => {
    const hoteles = [
@@ -115,3 +116,25 @@ export const getFavourites = async (req, res) => {
         console.log(error)
      }
 } 
+
+export const deleteFavorite = async (req, res) => { 
+       try {    
+            const hotelToBeDeleted = (req.body.id)
+            await Favourites.findByIdAndDelete(hotelToBeDeleted);
+            res.send("Producto Eliminado de la seccion de Favoritos")
+       } catch (error) {
+           console.log(error)
+     }
+}
+
+
+/*
+  export const deleteFavourite = async (req, res) => { 
+    try {
+        await Favs.findByIdAndDelete(req.body.id);
+        res.send("Producto Eliminado de la seccion de Favoritos")
+     } catch (error) {
+        console.log(error)
+     }
+  }
+*/
