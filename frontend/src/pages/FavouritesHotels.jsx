@@ -45,7 +45,7 @@ const FavouritesHotels = () => {
  
   return (
     <div> 
-       <NavBar/>
+     
       
         {spin ? 
             <div className='load'>

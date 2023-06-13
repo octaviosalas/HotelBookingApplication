@@ -41,7 +41,7 @@ const AmericanHotels = () => {
                </div>
           :
          <> 
-       <NavBar />
+  
 
          <div className='title-container'>
                  <h3 className='title'>American Hotels <img src={usa}></img></h3>

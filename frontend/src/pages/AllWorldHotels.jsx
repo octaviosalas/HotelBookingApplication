@@ -45,7 +45,7 @@ const AllWorldHotels = () => {
             : 
             <>
 
-            <NavBar />
+           
       
          <div className='title-container'>
             <h3 className='title'>All Our Hotels</h3>

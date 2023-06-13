@@ -18,6 +18,7 @@ import ThreeStars from './pages/ThreeStars';
 import FourStarsHotels from './pages/FourStarsHotels';
 import FiveStars from './pages/FiveStars';
 import Reserves from './components/Reserves';
+import NavBar from './components/Navbar';
 
 
 
@@ -32,7 +33,9 @@ function App() {
     <div className="app">
 
       <UserProvider>
-
+          
+          <NavBar/>
+          
 
          <Routes>
            <Route path='/' element={<Register />}></Route> 

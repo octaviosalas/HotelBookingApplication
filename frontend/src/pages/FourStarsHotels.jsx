@@ -37,7 +37,7 @@ const FourStarsHotels = () => {
     <div>
            <div>
       
-             <NavBar />
+          
              <div className='title-container'>
                 <p className='title'>Four stars Hotels! </p>
             </div>

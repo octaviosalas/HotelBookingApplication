@@ -40,7 +40,7 @@ const EuropeHotels = () => {
                 </div>
              : 
              <>
-          <NavBar />
+        
  
 
      <div className='title-container'>

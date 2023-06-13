@@ -43,9 +43,7 @@
     text-decoration: underline;
 }
 
-.b:hover{ 
-    background-color: green;
-}
+
 
 .btn-reserv { 
    margin-left: 210px;
@@ -92,6 +90,70 @@
     width: 45vh;
 }
 
+.container-reserve { 
+    margin-top: 12vh;
+    margin-left: 10vh;
+    border: 0.9vh solid rgb(248, 244, 244);
+    width: 50vh;
+    background-color: rgb(249, 242, 242);
+}
+
 .reserves-container { 
     display: flex;
+}
+
+.confirm-reserve-btn { 
+    color: black;
+    background-color: lightblue;
+    margin-left: 10vh;
+    width: 20vh;
+    margin-bottom: 2vh;
+}
+
+.confirm-reserve-btn:hover { 
+    color: lightblue;
+    background-color: black;
+}
+
+.data-div { 
+    margin-top: 4vh;
+    margin-right: 9vh;
+   
+}
+
+.close-reserve { 
+    float: right;
+    font-size: 2vh;
+    margin-top: 0vh;
+}
+
+.title-reserve { 
+    margin-top: 2vh;
+}
+
+.reserve-medium { 
+    align-items: center;
+    margin-left: 8.5vh;
+}
+
+.acord { 
+    margin-top: 0.2vh;
+   
+}
+
+.btn-row { 
+    margin-top: 2vh;
+    align-items: center;
+    width: 15vh;
+    font-size: 1vh;
+    height: 3.5vh;
+}
+
+.row-div { 
+    align-items: center;
+    margin-right: 17vh;
+}
+
+.calendario { 
+    margin-left: 4vh;
 }

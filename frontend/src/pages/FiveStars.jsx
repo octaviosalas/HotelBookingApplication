@@ -38,7 +38,6 @@ const FiveStars = () => {
     <div>
         
       
-            <NavBar />
             <div className='title-container'>
                <p className='title'>Three stars Hotels! </p>
             </div>

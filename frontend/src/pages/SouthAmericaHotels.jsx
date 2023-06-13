@@ -42,7 +42,6 @@ const SouthAmericaHotels = () => {
                : 
               <>
       
-            <NavBar />
    
                    <div className='title-container'>
                        <h3 className='title'>South America Hotels</h3>
