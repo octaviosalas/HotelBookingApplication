@@ -92,3 +92,6 @@
     width: 45vh;
 }
 
+.reserves-container { 
+    display: flex;
+}

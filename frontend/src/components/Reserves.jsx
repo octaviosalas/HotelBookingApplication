@@ -7,6 +7,7 @@ import Navbar from "./Navbar"
 import axios from 'axios';
 import "../styles/detaill.css"
 import { useParams } from 'react-router-dom';
+import HotelDetail from '../pages/HotelDetail';
 
 
 const Reserves = () => {
@@ -16,7 +17,6 @@ const Reserves = () => {
   const [hotel, setHotel] = useState([])
   const {id} = useParams()
 
-  console.log(id)
 
 
   useEffect(() => { 
@@ -35,7 +35,7 @@ const Reserves = () => {
     .catch((err) => { 
        console.log(err)
     })
-  })
+  }, [id])
 
 
 
@@ -65,9 +65,9 @@ const Reserves = () => {
 
     <div className='reserves-container'> 
 
-     
+      <HotelDetail hotelId={id}/>
 
-        <div className='container-reserve' style={{ margin: '10vh' }}>
+       <div className='container-reserve' style={{ margin: '10vh' }}>
               <p>Please, choose your arrival date and your departure date from the hotel</p>
                    <Calendar onClickDay={handleDateClick} tileClassName={({ date, view }) =>
                        startDate && date.toDateString() === startDate.toDateString()

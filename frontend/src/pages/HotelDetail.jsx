@@ -20,7 +20,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const HotelDetail = () => {
+const HotelDetail = ({hotelId}) => {
 
     const {id} = useParams()
     const [hotel, setHotel] = useState([])
