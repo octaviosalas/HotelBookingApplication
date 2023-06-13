@@ -2,10 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { useContext, useState, useEffect } from 'react'
 import { UserContext } from '../store/usercontext.js'
-import StructureForHotels from '../components/StructureForHotels.jsx';
-import { Navbar } from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner'; //bootstrap spinner load
-import NavBar from '../components/Navbar.jsx';
 import "../styles/structurehotels.css"
 import { Link } from 'react-router-dom';
 import StructureFavorites from '../components/StructureFavorites.jsx';
@@ -49,7 +46,7 @@ const FavouritesHotels = () => {
       
         {spin ? 
             <div className='load'>
-                   <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span> </Spinner>
+                   <Spinner animation="border" role="status" style={{marginRight: "23vh"}}> <span className="visually-hidden">Loading...</span> </Spinner>
             </div>   :   favourites.map((f) => <StructureFavorites hotels={f}/>)}
 
            {msj &&  <div className='loading-div'>

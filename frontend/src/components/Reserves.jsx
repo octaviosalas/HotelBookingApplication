@@ -9,6 +9,9 @@ import { useParams } from 'react-router-dom';
 import HotelDetail from '../pages/HotelDetail';
 import Accordion from 'react-bootstrap/Accordion';
 import Form from 'react-bootstrap/Form';
+import CustomModal from '../components/ModalReserves';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -27,7 +30,7 @@ const Reserves = () => {
   const [pricePerNight, setPricePerNight] = useState(null)
   const [priceStay, setPriceStay] = useState(null)
   const [numberOfDays, setNumberOfDays] = useState(0);
-  const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
   console.log(people)
 
@@ -90,6 +93,8 @@ const Reserves = () => {
     setCoordinate(false)
   }
 
+  
+
   return (
 
    <>   
@@ -130,16 +135,20 @@ const Reserves = () => {
              
                         </Accordion>
                           
-  
+                               
   
                                            
                               <div className='data-div'>
-                                     <p className='data-reserve'> <b>Arrival Date:</b>{formattedStartDate}</p>
+                                     <p className='data-reserve'> <b>Arrival Date:</b> {formattedStartDate}</p>
                                      <p className='data-reserve'><b>Departure Date:</b> {formattedEndDate}</p>
-                                     <p className='data-reserve'><b>Numer of Days:</b>{numberOfDays}</p>
+                                     <p className='data-reserve'><b>Numer of Days:</b> {numberOfDays}</p>
                                      <p className='data-reserve'><b>Quantity Of People:</b> {people}</p>
                                      <p className='data-reserve'><b>Price of the stay:</b> {numberOfDays * pricePerNight} USD 💲  </p>
-                                     <button className='confirm-reserve-btn'>Confirm Reserve</button>
+                                     <button className='confirm-reserve-btn' onClick={() => setShowModal(false)}>Continue to Confirm</button>
+                                </div>
+
+                                <div>
+                                    {showModal ? null : <CustomModal onClose={() => setShowModal(true)} title={" The hotel you have chosen is " + hotel.name} body={" You are about to confirm your reservation. The day of arrival will be " + formattedStartDate } bodyTwo={"The day of departure will be " + formattedEndDate} bodyThree={"Reserve a room for " + people} bodyFour={ " The stay will have a value of " + numberOfDays*pricePerNight + "USD 💲"}/>}
                                 </div>
   
   

@@ -31,7 +31,7 @@ const HotelDetail = ({hotelId}) => {
     const [acordionBeedroms, setAcordionBeedroms] = useState(true)
     const [acordionPhotos, setAcordionPhotos] = useState(true)
     const [modal, setModal] = useState(true)
-    const [showReserveComponent, setShowReserveComponent] = useState(true)
+    const [reserveBtn, setReserveBtn] = useState(true)
    
    
 
@@ -184,7 +184,10 @@ const HotelDetail = ({hotelId}) => {
            {modal ? null : <CustomModal onClose={() => setModal(true)} title={hotel.name} body={[hotel.img[0], hotel.img[1], hotel.img[2], hotel.img[3], hotel.img[4], hotel.img[5], hotel.img[6]]}/>}
          </div> 
            <div className='show-reserve'>
-              <Link to={`/reserves/${hotel.id}`}> <button className='btn-reserv'>Reserv</button></Link>
+
+         <Link to={`/reserves/${hotel.id}`}> <button className='btn-reserv' onClick={() => setReserveBtn(false)}> Start Reserv</button></Link> 
+
+              
            </div>
     
         </div>
