@@ -17,6 +17,7 @@ import EightyToTwoHundred from './pages/EightyToTwoHundred';
 import ThreeStars from './pages/ThreeStars';
 import FourStarsHotels from './pages/FourStarsHotels';
 import FiveStars from './pages/FiveStars';
+import Reserves from './components/Reserves';
 
 
 
@@ -49,6 +50,7 @@ function App() {
            <Route path='/threeStars' element={<ThreeStars />}></Route>
            <Route path='/fourStars' element={<FourStarsHotels />}></Route>
            <Route path='/fiveStars' element={<FiveStars />}></Route>
+           <Route path='/reserves/:id' element={<Reserves />}></Route>
            
         
           

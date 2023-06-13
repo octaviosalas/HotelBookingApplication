@@ -13,6 +13,8 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import CustomModal from '../components/ModalPhotos';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -29,6 +31,7 @@ const HotelDetail = () => {
     const [acordionBeedroms, setAcordionBeedroms] = useState(true)
     const [acordionPhotos, setAcordionPhotos] = useState(true)
     const [modal, setModal] = useState(true)
+    const [showReserveComponent, setShowReserveComponent] = useState(true)
    
    
 
@@ -54,7 +57,7 @@ const HotelDetail = () => {
     
 
   return (
-     <div > 
+     <div className='hotel-details-container'> 
      
 
          {loading ? 
@@ -179,9 +182,11 @@ const HotelDetail = () => {
 
          <div>
            {modal ? null : <CustomModal onClose={() => setModal(true)} title={hotel.name} body={[hotel.img[0], hotel.img[1], hotel.img[2], hotel.img[3], hotel.img[4], hotel.img[5], hotel.img[6]]}/>}
-         </div>
-
-            <button className='btn-reserv'>Reserv</button>
+         </div> 
+           <div className='show-reserve'>
+              <Link to={`/reserves/${hotel.id}`}> <button className='btn-reserv'>Reserv</button></Link>
+           </div>
+    
         </div>
           </>
          }
