@@ -130,12 +130,13 @@ export const deleteFavorite = async (req, res) => {
 
 export const reciveReserves = async (req, res) => { 
 
-    const {hotelId, userId,  name, checkIn, checkOut, amountPeople , totalPrice} = req.body
+    const {hotelId, userId, userName,  name, checkIn, checkOut, amountPeople , totalPrice} = req.body
 
     try {
         const newReservToBeSaved = new Reserves( { 
             hotelId: hotelId,
             userId: userId,
+            userName: userName,
             name: name,
             checkIn: checkIn,
             checkOut: checkOut,
@@ -153,5 +154,14 @@ export const reciveReserves = async (req, res) => {
 }
 
 export const getReserves = async (req, res) => { 
+   
+     const {userId} = req.params
+     try {
+       const searchReserves = await Reserves.find({userId: userId})
+       res.send(searchReserves)
+     } catch (error) {
+        console.log(error)
+     }   
+
 
 }

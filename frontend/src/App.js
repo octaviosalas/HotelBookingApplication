@@ -19,6 +19,7 @@ import FourStarsHotels from './pages/FourStarsHotels';
 import FiveStars from './pages/FiveStars';
 import Reserves from './components/Reserves';
 import NavBar from './components/Navbar';
+import MyReservations from './pages/MyReservations';
 ;
 
 
@@ -56,6 +57,7 @@ function App() {
            <Route path='/fourStars' element={<FourStarsHotels />}></Route>
            <Route path='/fiveStars' element={<FiveStars />}></Route>
            <Route path='/reserves/:id' element={<Reserves />}></Route>
+           <Route path='/myReserves/:userId' element={<MyReservations />}></Route>
            
         
           

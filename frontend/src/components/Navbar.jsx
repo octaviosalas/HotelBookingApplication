@@ -42,9 +42,11 @@ const NavBar = ({}) => {
     navigate(`/favourites/${userCtx.userId}`)
    }
 
-   const twentyToFifty = () => { 
-    navigate("/twentyToFifty") 
-  }
+   const goMyReserves = () => { 
+    navigate(`/myReserves/${userCtx.userId}`)
+   }
+
+  
 
    
 
@@ -93,7 +95,7 @@ const NavBar = ({}) => {
                            :
             <Nav>
                  <NavDropdown title={userName}  id="collasible-nav-dropdown">
-                 <NavDropdown.Item className='nav-select'>My Reservations</NavDropdown.Item>
+                 <NavDropdown.Item className='nav-select' onClick={() => goMyReserves()}>My Reservations</NavDropdown.Item>
                    <NavDropdown.Item onClick={() => goFavourites()} className='nav-select'>Favourites</NavDropdown.Item>
                  <NavDropdown.Item className='nav-select'>Setting</NavDropdown.Item>
                  </NavDropdown>

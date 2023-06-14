@@ -62,7 +62,7 @@ const HotelDetail = ({hotelId}) => {
 
          {loading ? 
            <div className='loading-div'>
-                       <p>You are being redirected to the hotel details..</p>
+                       
                      <Spinner animation="border" role="status" className='spin'> <span className="visually-hidden">Loading...</span> </Spinner> 
            </div> 
              : 

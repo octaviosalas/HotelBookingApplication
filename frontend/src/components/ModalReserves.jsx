@@ -6,19 +6,37 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../store/usercontext';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const CustomModal = ({ title, body, bodyTwo, bodyThree, bodyFour, onClose }) => {
 
     const userCtx = useContext(UserContext)
+    const [userName, setUserName] = useState("")
     const {id} = useParams()
     const navigate = useNavigate()
     console.log(userCtx.userId)
+
+    const getUserNameToNavBar = () => { 
+      axios.get(`http://localhost:4000/getUserById/${userCtx.userId}`)
+           .then((res) => {
+            console.log(res.data)
+            setTimeout(() => { 
+              setUserName(res.data.name)
+            }, 500)
+      
+          })
+           .catch((err) => console.log(err))
+     }
+  
+     useEffect(() => { 
+       getUserNameToNavBar()
+     }, [])
 
     const sendMyReserv = () => { 
         const newReserv = { 
            hotelId: id,
            userId: userCtx.userId,
+           userName: userName,
            name: title,
            checkIn: body,
            checkOut: bodyTwo,

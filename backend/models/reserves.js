@@ -8,6 +8,9 @@ const reservesSchema = mongoose.Schema( {
     userId: { 
        type: String
     },
+    userName: { 
+      type: String
+    },
     name: { 
         type: String
     },

@@ -1,9 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Carousel from 'react-bootstrap/Carousel';
 import Accordion from 'react-bootstrap/Accordion';
-import Nav from 'react-bootstrap/Nav';
 import "../styles/structurehotels.css"
 import { Link } from 'react-router-dom';
 import { useContext, useState, useEffect } from 'react'
@@ -11,7 +9,6 @@ import { UserContext } from '../store/usercontext.js'
 import axios from 'axios';
 import Alert from 'react-bootstrap/Alert';
 import deletee from "../img/deletee.png"
-import { useNavigate } from 'react-router-dom';
 
 
 
