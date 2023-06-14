@@ -148,7 +148,7 @@ const Reserves = () => {
                                 </div>
 
                                 <div>
-                                    {showModal ? null : <CustomModal onClose={() => setShowModal(true)} title={" The hotel you have chosen is " + hotel.name} body={" You are about to confirm your reservation. The day of arrival will be " + formattedStartDate } bodyTwo={"The day of departure will be " + formattedEndDate} bodyThree={"Reserve a room for " + people} bodyFour={ " The stay will have a value of " + numberOfDays*pricePerNight + "USD 💲"}/>}
+                                    {showModal ? null : <CustomModal onClose={() => setShowModal(true)} title={hotel.name} body={formattedStartDate } bodyTwo={formattedEndDate} bodyThree={people} bodyFour={ numberOfDays*pricePerNight}/>}
                                 </div>
   
   

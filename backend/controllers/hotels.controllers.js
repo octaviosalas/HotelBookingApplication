@@ -1,6 +1,7 @@
 import Hotels from "../models/hotels.js"
 import Favourites from "../models/favouriteHotels.js"
-import mongoose from "mongoose"
+import Reserves from "../models/reserves.js"
+
 
 export const agregarHoteles = async (req, res) => {
    const hoteles = [
@@ -127,14 +128,30 @@ export const deleteFavorite = async (req, res) => {
      }
 }
 
+export const reciveReserves = async (req, res) => { 
 
-/*
-  export const deleteFavourite = async (req, res) => { 
+    const {hotelId, userId,  name, checkIn, checkOut, amountPeople , totalPrice} = req.body
+
     try {
-        await Favs.findByIdAndDelete(req.body.id);
-        res.send("Producto Eliminado de la seccion de Favoritos")
-     } catch (error) {
+        const newReservToBeSaved = new Reserves( { 
+            hotelId: hotelId,
+            userId: userId,
+            name: name,
+            checkIn: checkIn,
+            checkOut: checkOut,
+            amountPeople: amountPeople,
+            totalPrice: totalPrice
+        })  
+        await newReservToBeSaved.save()
+        res.json({message: "The reserv has been saved successfully ✔"})
+        console.log("The reserv has been saved successfully ✔")
+    } catch (error) {
         console.log(error)
-     }
-  }
-*/
+        res.send(error)
+    }
+    
+}
+
+export const getReserves = async (req, res) => { 
+
+}

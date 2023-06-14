@@ -19,6 +19,8 @@ import FourStarsHotels from './pages/FourStarsHotels';
 import FiveStars from './pages/FiveStars';
 import Reserves from './components/Reserves';
 import NavBar from './components/Navbar';
+;
+
 
 
 
@@ -60,6 +62,8 @@ function App() {
          </Routes>
 
       </UserProvider>
+  
+
 
     
         

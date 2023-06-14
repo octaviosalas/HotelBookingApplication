@@ -16,6 +16,8 @@ const Login = () => {
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
+    const [positiveMsj, setPositiveMsj] = useState(true)
+    const [negativeMsj, setNegativeMsj] = useState(true)
     const navigate = useNavigate()
     const userCtx = useContext(UserContext)
 
@@ -31,13 +33,16 @@ const Login = () => {
         axios.post("http://localhost:4000/loginUser", userToInit)
              .then(({data}) => { 
               userCtx.updateUser(data.user.id)
+              setPositiveMsj(false)
               setTimeout(() => { 
                 console.log(userCtx.userId)
                 navigate(`/main/${userCtx.userId}`)
+
               }, 1500)
              })
              .catch((err) => { 
                 console.log(err)
+                setNegativeMsj(false)
              })
     }
 
@@ -76,8 +81,9 @@ const Login = () => {
 
                    <button type='button' className='btn-confirm' title='register' onClick={() => logIn()}> Log In</button>
                    <Link to={"/"}><p>If you dont have a count, lets Register!</p></Link>
-
-               
+                   
+                    {positiveMsj ? null : <p>Entering. The data was correct</p>}
+                    {negativeMsj ? null : <p>The data entered was incorrect</p>}
         </form> 
 
      </div>

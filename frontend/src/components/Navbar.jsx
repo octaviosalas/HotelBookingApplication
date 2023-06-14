@@ -45,6 +45,7 @@ const NavBar = ({}) => {
    const twentyToFifty = () => { 
     navigate("/twentyToFifty") 
   }
+
    
 
   
