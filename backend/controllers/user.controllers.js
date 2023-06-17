@@ -43,6 +43,7 @@ export const login = async (req, res) => {
          } else { 
             bcrypt.compare(password, user.password).then((correct) => { 
                 if(correct) { 
+                    console.log("OSAHFOASJ")
                     const {id, name} = user
                     res.json({message: "successful income", 
                      user: { 

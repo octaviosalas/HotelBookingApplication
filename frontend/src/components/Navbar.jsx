@@ -28,7 +28,7 @@ const NavBar = ({}) => {
           setTimeout(() => { 
             setUserName(res.data.name)
             setDidntGotUserName(false)
-          }, 500)
+          }, [])
     
         })
          .catch((err) => console.log(err))
@@ -38,6 +38,7 @@ const NavBar = ({}) => {
      getUserNameToNavBar()
    }, [])
 
+
    const goFavourites = () => { 
     navigate(`/favourites/${userCtx.userId}`)
    }
@@ -45,13 +46,7 @@ const NavBar = ({}) => {
    const goMyReserves = () => { 
     navigate(`/myReserves/${userCtx.userId}`)
    }
-
-  
-
-   
-
-  
-  
+ 
   return (
 
     <div className='nav-container'>
@@ -85,8 +80,6 @@ const NavBar = ({}) => {
 
         </Nav>
          
-           
-      
         { didntGotUserName ?  
            <Nav> 
                  <Nav.Link href="/userRegister" className='item-nav' title='Register' >Register</Nav.Link>
