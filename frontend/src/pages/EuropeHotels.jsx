@@ -40,16 +40,25 @@ const EuropeHotels = () => {
                 </div>
              : 
              <>
-        
- 
-
-     <div className='title-container'>
+                  <div className='title-container'>
              <h3 className='title'>Europe Hotels</h3>
-     </div>
+                 </div>
 
-     <div className='container-americann'>
-        {hotels.map((h) => <StructureForHotels hotels={h}/>)}
-     </div>  
+             <div style={{display:"flex"}}>  
+                        <div>
+         
+                       </div>
+               
+               <div>
+                      <div className='container-americann'>
+                           {hotels.map((h) => <StructureForHotels hotels={h}/>)}
+                      </div>  
+               </div>
+
+             </div>
+
+
+    
      </> 
       }     
 </div>

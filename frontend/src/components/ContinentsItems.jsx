@@ -6,7 +6,7 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import europe from "../img/europeimg.png"
 import south from "../img/southamericaimg.png"
 import eeuu from "../img/eeuu.png"
-import world from "../img/world.png"
+import world2 from "../img/world2.png"
 
 
 const ContinentsItems = () => {
@@ -47,7 +47,7 @@ const ContinentsItems = () => {
           </Card>
 
           <Card className='card-continent'>
-             <Card.Img  className='card-img' src={world} />
+             <Card.Img  className='card-img' src={world2} />
                <Card.Body>
                <Link to={"/allHotels"}> <Card.Title><button className='btn-sectionn'>All Our Hotels</button></Card.Title></Link>
                     

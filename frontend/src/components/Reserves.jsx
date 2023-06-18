@@ -10,14 +10,20 @@ import HotelDetail from '../pages/HotelDetail';
 import Accordion from 'react-bootstrap/Accordion';
 import Form from 'react-bootstrap/Form';
 import CustomModal from '../components/ModalReserves';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import Alert from 'react-bootstrap/Alert';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../store/usercontext';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 
 const Reserves = () => {
+
+  const userCtx = useContext(UserContext)
+  const navigate = useNavigate();
 
 
   const [loadingPage, setLoadingPage] = useState(true)
@@ -31,6 +37,10 @@ const Reserves = () => {
   const [priceStay, setPriceStay] = useState(null)
   const [numberOfDays, setNumberOfDays] = useState(0);
   const [showModal, setShowModal] = useState(true);
+  const [showReversationMsjConfirmate, setShowReservationMsjConfirmate] = useState(true)
+  const [showComponent, setShowComponent] = useState(true)
+  const [userEmail, setUserEmail] = useState("")
+  const [closeReserve, setCloseReserve] = useState(true)
 
   console.log(people)
 
@@ -53,6 +63,15 @@ const Reserves = () => {
        console.log(err)
     })
   }, [id])
+
+  useEffect(() => { 
+    axios.get(`http://localhost:4000/getUserById/${userCtx.userId}`)
+         .then((res) => { 
+          const docs = res.data
+          setUserEmail(docs.email)
+         })
+         .catch((err) => console.log(err))
+  },[])
 
   useEffect(() => {
     if (startDate && endDate) {
@@ -93,19 +112,48 @@ const Reserves = () => {
     setCoordinate(false)
   }
 
+  const showMsjConfirmateReservatrion = () => { 
+    setShowReservationMsjConfirmate(false)
+    setShowComponent(false)
+  }
+
+  
+ const goBack = () => { 
+    navigate(-1)
+ }
   
 
   return (
 
    <>   
 
-      
+                   <div style={{marginTop:"10vh", width:"60vh"}}>
+                     {showReversationMsjConfirmate ? null :
+                
+                          <div>                 
+                             <Alert variant="success">
+                         
+                                <p>Your reservation was confirmed successfully</p>
+                                <p> We send you an email to <b>{userEmail}</b> with the steps to follow to make the payment.</p>
+                                <p style={{textDecoration:"underline"}}>Remember that payment is required to enter the hotel.</p>
+                                <p>Please check your box</p>
+                                <p>✔</p>
+                                <br/>
+                                <div style={{display:"flex"}}>
+                                 <Link to={`/main/${userCtx.userId}`}> <p style={{marginLeft:"14vh", textDecoration:"underline", cursor:"pointer"}}>Go Main</p></Link>
+                                 <Link to={`/myReserves/${userCtx.userId}`}> <p style={{marginLeft:"14vh", textDecoration:"underline", cursor:"pointer"}}>View My Reserves</p></Link>
+                                </div>
+                            
+                             </Alert>
+                         </div>               
+                         }
+                  </div>
+
+            
               
-              <div className='reserves-container'> 
+             { showComponent  ? <div className='reserves-container'> 
                  <HotelDetail hotelId={id}/>
 
-               
-                 
                  <div className='container-reserve'>
                     
                        <Accordion defaultActiveKey="1" >
@@ -145,11 +193,18 @@ const Reserves = () => {
                                      <p className='data-reserve'><b>Quantity Of People:</b> {people}</p>
                                      <p className='data-reserve'><b>Price of the stay:</b> {numberOfDays * pricePerNight} USD 💲  </p>
                                      <button className='confirm-reserve-btn' onClick={() => setShowModal(false)}>Continue to Confirm</button>
+                                     <button className='confirm-reserve-btn' style={{fontSize:"1vh", width:"7vh", marginLeft:"22vh"}} onClick={() => goBack()}>Close</button>
+                                  
+                                    
+                                     
+                                   
                                 </div>
 
                                 <div>
-                                    {showModal ? null : <CustomModal onClose={() => setShowModal(true)} title={hotel.name} body={formattedStartDate } bodyTwo={formattedEndDate} bodyThree={people} bodyFour={ numberOfDays*pricePerNight}/>}
+                                    {showModal ? null : <CustomModal showMsjConfirmate={() => showMsjConfirmateReservatrion()} onClose={() => setShowModal(true)} title={hotel.name} body={formattedStartDate } bodyTwo={formattedEndDate} bodyThree={people} bodyFour={ numberOfDays*pricePerNight}/>}
                                 </div>
+
+                              
   
   
                                                      
@@ -158,7 +213,7 @@ const Reserves = () => {
                  
                   
        
-      </div>
+      </div> : null}
    
               
              

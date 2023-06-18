@@ -8,7 +8,7 @@ import { UserContext } from '../store/usercontext';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-const CustomModal = ({ title, body, bodyTwo, bodyThree, bodyFour, onClose }) => {
+const CustomModal = ({ title, body, bodyTwo, bodyThree, bodyFour, onClose, showMsjConfirmate }) => {
 
     const userCtx = useContext(UserContext)
     const [userName, setUserName] = useState("")
@@ -47,6 +47,7 @@ const CustomModal = ({ title, body, bodyTwo, bodyThree, bodyFour, onClose }) => 
              .then(({data}) => { 
               console.log(data.message)
               onClose()
+              showMsjConfirmate()
              })
              .catch((err) => { 
               console.log(err)
@@ -68,9 +69,14 @@ const CustomModal = ({ title, body, bodyTwo, bodyThree, bodyFour, onClose }) => 
             
       </Modal.Body>
       <Modal.Body>
-            <Button className='definitive-confirm' style={{color:"black", background:"lightblue", boder:"lightblue", marginLeft: "10vh"}} onClick={() => sendMyReserv()}>Confirm and send me the Email</Button>
+        <div style={{display:"flex"}}>
+             <Button className='definitive-confirm' style={{color:"black", background:"lightblue", boder:"lightblue", marginLeft: "3vh"}} onClick={() => sendMyReserv()}>Confirm and send me the Email</Button>
+            <Button className='definitive-confirm' style={{color:"black", background:"lightblue", boder:"lightblue", marginLeft: "3vh"}} onClick={() => onClose()}>I Regret</Button>
+        </div>
+            
       </Modal.Body>
     </Modal>
+
   );
 };
 

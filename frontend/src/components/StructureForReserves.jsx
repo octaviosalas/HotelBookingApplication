@@ -9,14 +9,39 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import { Link } from 'react-router-dom';
-
+import axios from "axios"
+import { useContext, useState } from 'react';
+import { UserContext } from '../store/usercontext';
+import ModalOpinions from './ModalOpinions';
 
 
 
 
 const StructureForReserves = ({reservs}) => {
 
-    console.log(reservs.hotelId)
+  const userCtx = useContext(UserContext)
+
+  const [showModalOpinions, setShowModalOpinions] = React.useState(true)
+
+  const deleteMyReserv = (id) => { 
+    axios.post(`http://localhost:4000/deleteReserve/${userCtx.userId}`, {id: id.toString()})
+         .then((res) => { 
+            console.log(res.data)
+            window.location.reload()
+          })
+          .catch((err) => { 
+            console.log(err)
+          })
+  }
+  
+  const showModalOpinion = () => { 
+    setShowModalOpinions(false)
+  }
+
+  const dontShowModalOpinion = () => { 
+    setShowModalOpinions(true)
+  }
+    
 
     const bull = (
         <Box
@@ -39,10 +64,11 @@ const StructureForReserves = ({reservs}) => {
           </CardContent>
           <CardActions>
               <Stack direction="row" spacing={2}>
-                 <Button variant="outlined" startIcon={<DeleteIcon />}>Delete Reserve</Button>
+                 <Button variant="outlined" startIcon={<DeleteIcon />} onClick={() => deleteMyReserv(reservs.hotelId)}>Delete Reserve</Button>
                  <Button variant="contained" endIcon={<SendIcon />}>Edit Reserve</Button>
               </Stack>
           </CardActions>
+                <p style={{margin:"1vh", textDecoration:"underline", cursor:"pointer"}} title="Send Opinion" onClick={() => showModalOpinion()}>If you have fulfilled your stay, you can comment on the hotel!</p>
         </React.Fragment>
       );
     
@@ -52,6 +78,8 @@ const StructureForReserves = ({reservs}) => {
             <Box sx={{ minWidth: 275 }}>
                 <Card variant="outlined">{card}</Card>
             </Box>
+
+            {showModalOpinions ? null : <ModalOpinions onClose={() => dontShowModalOpinion()} title={reservs.name} hotelId={reservs.hotelId}/>}
     </div>
   )
 }

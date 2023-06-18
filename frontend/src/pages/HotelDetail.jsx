@@ -32,6 +32,8 @@ const HotelDetail = ({hotelId}) => {
     const [acordionPhotos, setAcordionPhotos] = useState(true)
     const [modal, setModal] = useState(true)
     const [reserveBtn, setReserveBtn] = useState(true)
+    const [closeReserve, setCloseReserve] = useState(true)
+    const [notShow, setDontShow] = useState(true) 
    
    
 
@@ -54,6 +56,10 @@ const HotelDetail = ({hotelId}) => {
                 console.log(err)
              })
     }, [])
+
+   const dontShowComponentReserv = () => { 
+    setCloseReserve(true)
+   }
     
 
   return (
@@ -185,7 +191,12 @@ const HotelDetail = ({hotelId}) => {
          </div> 
            <div className='show-reserve'>
 
-         <Link to={`/reserves/${hotel.id}`}> <button className='btn-reserv' onClick={() => setReserveBtn(false)}> Start Reserv</button></Link> 
+            <div>
+               <p style={{textDecoration:"underline", cursor:"pointer", fontSize:"1.3vh"}}>Know Opinions about the Hotel</p>
+            </div>
+
+            <Link to={`/reserves/${hotel.id}`}> <button className='btn-reserv' onClick={() => setReserveBtn(false)}> Start Reserv</button></Link> 
+         
 
               
            </div>

@@ -20,7 +20,8 @@ import FiveStars from './pages/FiveStars';
 import Reserves from './components/Reserves';
 import NavBar from './components/Navbar';
 import MyReservations from './pages/MyReservations';
-;
+
+
 
 
 
@@ -60,12 +61,11 @@ function App() {
            <Route path='/myReserves/:userId' element={<MyReservations />}></Route>
            
         
-          
+
          </Routes>
 
       </UserProvider>
   
-
 
     
         

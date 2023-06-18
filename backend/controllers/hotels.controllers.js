@@ -1,6 +1,7 @@
 import Hotels from "../models/hotels.js"
 import Favourites from "../models/favouriteHotels.js"
 import Reserves from "../models/reserves.js"
+import Opinions from "../models/opinions.js";
 
 
 export const agregarHoteles = async (req, res) => {
@@ -163,5 +164,46 @@ export const getReserves = async (req, res) => {
         console.log(error)
      }   
 
+
+}
+
+export const deleteReserv = async (req, res) => { 
+
+  const {userId} = req.params
+  const {id: hotelId} = req.body
+
+  try {    
+    await Reserves.deleteMany({userId, hotelId})
+    res.send("The reserv Has been Deleted")
+} catch (error) {
+   console.log(error)
+}
+}
+
+export const saveOpinion = async (req, res) => { 
+    const {userName, puntuaction, opinion, userId, hotelId} = req.body
+
+    try {
+        const saveOpinionAboutHotel = new Opinions({ 
+        hotelId: hotelId,
+        userId: userId,
+        userName: userName,
+        puntuaction: puntuaction,
+        opinion: opinion
+       })
+       await saveOpinionAboutHotel.save()
+       res.json({message: "Your opinion was saved. Now other users will take your opinion into account when choosing the hotel. ✔"})
+       console.log("Your opinion was saved. Now other users will take your opinion into account when choosing the hotel. ✔")
+       console.log(req.body)
+    } catch (error) {
+       console.log(error)
+    }
+     
+
+} 
+
+
+
+export const getOpinions = () => { 
 
 }
