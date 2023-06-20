@@ -204,6 +204,16 @@ export const saveOpinion = async (req, res) => {
 
 
 
-export const getOpinions = () => { 
+export const getOpinions = async (req, res) => { 
+    
+   const {id} = req.params;
+
+   try {
+     const searchOpinions = await Opinions.find({hotelId: id})
+     res.send(searchOpinions)
+     console.log("Encontre opiniones")
+   } catch (error) {
+     console.log(error)
+   }
 
 }

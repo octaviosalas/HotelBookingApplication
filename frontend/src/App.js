@@ -1,4 +1,5 @@
 import './App.css';
+import * as React from 'react'
 import AmericanHotels from './pages/AmericanHotels';
 import Main from "./pages/Main"
 import 'bootstrap/dist/css/bootstrap.min.css'; //importacion de bootstrap
@@ -27,20 +28,18 @@ import MyReservations from './pages/MyReservations';
 
 
 
+
+
 function App() {
   return (
 
-  
-       
 
 
     <div className="app">
+  
 
       <UserProvider>
-          
           <NavBar/>
-          
-
          <Routes>
            <Route path='/' element={<Register />}></Route> 
            <Route path='/login' element={<Login />}></Route> 
@@ -59,14 +58,10 @@ function App() {
            <Route path='/fiveStars' element={<FiveStars />}></Route>
            <Route path='/reserves/:id' element={<Reserves />}></Route>
            <Route path='/myReserves/:userId' element={<MyReservations />}></Route>
-           
-        
-
          </Routes>
 
       </UserProvider>
-  
-
+ 
     
         
 

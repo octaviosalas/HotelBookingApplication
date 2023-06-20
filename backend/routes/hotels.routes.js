@@ -11,6 +11,6 @@ hotelsRoutes.post("/reserves", reciveReserves)
 hotelsRoutes.get("/getReserves/:userId", getReserves)
 hotelsRoutes.post("/deleteReserve/:userId", deleteReserv)
 hotelsRoutes.post("/saveMyOpinion", saveOpinion)
-hotelsRoutes.get("/showOpinions/:userId", getOpinions)
+hotelsRoutes.get("/showOpinions/:id", getOpinions)
 
 export default hotelsRoutes

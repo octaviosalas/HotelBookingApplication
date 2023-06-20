@@ -11,6 +11,7 @@ import { useContext, useState, useEffect } from 'react'
 import { UserContext } from '../store/usercontext.js'
 import axios from 'axios';
 import Alert from 'react-bootstrap/Alert';
+import Opinions from './Opinions';
 
 
 
@@ -75,6 +76,7 @@ const StructureForHotels = ({hotels}) => {
                                     <p>Six Nigths: 💸 {hotels.averagePrice * 6} USD</p>
                                     <br />
                                    <Link to={`/hotelDetail/${hotels.id}`}><button className='btn-reserv'>View More</button></Link> 
+                         
                                 </Card.Text>
                                 
                          </Card.Body>

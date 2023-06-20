@@ -66,11 +66,11 @@ const Login = () => {
   return (
     <>
 
-       <h1 className='title-login'>You have successfully registered. Now you can login</h1>
+    
      <div className="formContainer">
 
        
-         <h2 className='second-title-form' style={{fontSize:"1.8vh"}}>Log in!</h2>
+         <h2 className='second-title-form' style={{fontSize:"2.3vh", textAlign:"center"}}>Log in!</h2>
 
          <form >
 

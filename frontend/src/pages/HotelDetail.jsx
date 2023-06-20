@@ -14,6 +14,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import CustomModal from '../components/ModalPhotos';
 import { Link } from 'react-router-dom';
+import Opinions from '../components/Opinions';
+
 
 
 
@@ -21,6 +23,13 @@ import { Link } from 'react-router-dom';
 
 
 const HotelDetail = ({hotelId}) => {
+
+     const nose = {
+          id: 1,
+          name: "aa",
+          apellido :"sadflks",
+          edad: 24
+        }
 
     const {id} = useParams()
     const [hotel, setHotel] = useState([])
@@ -33,10 +42,10 @@ const HotelDetail = ({hotelId}) => {
     const [modal, setModal] = useState(true)
     const [reserveBtn, setReserveBtn] = useState(true)
     const [closeReserve, setCloseReserve] = useState(true)
-    const [notShow, setDontShow] = useState(true) 
+    const [hotelOpinions, setHotelOpinions] = useState([])
    
    
-
+  
 
 
     useEffect(() => { 
@@ -55,6 +64,16 @@ const HotelDetail = ({hotelId}) => {
              .catch((err) => { 
                 console.log(err)
              })
+    }, [])
+
+
+    useEffect(() => { 
+       axios.get(`http://localhost:4000/showOpinions/${id}`)
+            .then((res) => { 
+               setHotelOpinions(res.data)
+               console.log(res.data)
+            })
+            .catch(err => console.log(err))
     }, [])
 
    const dontShowComponentReserv = () => { 
@@ -191,13 +210,13 @@ const HotelDetail = ({hotelId}) => {
          </div> 
            <div className='show-reserve'>
 
-            <div>
-               <p style={{textDecoration:"underline", cursor:"pointer", fontSize:"1.3vh"}}>Know Opinions about the Hotel</p>
-            </div>
-
             <Link to={`/reserves/${hotel.id}`}> <button className='btn-reserv' onClick={() => setReserveBtn(false)}> Start Reserv</button></Link> 
+             <hr/>
          
-
+         
+             <div>
+               <Opinions hotelName={hotel.name} hotelOpinions={hotelOpinions}/>
+             </div>
               
            </div>
     
