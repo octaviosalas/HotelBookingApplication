@@ -12,7 +12,9 @@ import { UserContext } from '../store/usercontext.js'
 import axios from 'axios';
 import Alert from 'react-bootstrap/Alert';
 import Opinions from './Opinions';
+import FavsBar from './SnackFavourites';
 
+//  { message ? <img src={favIcon} className='img-fav-icon' title='Save in Favourites' onClick={() => saveHotelLikeFavourite()}></img> :<Alert variant="success"><p>The Hotel was saved correctly in your favorites ✔</p></Alert>}
 
 
 const StructureForHotels = ({hotels}) => {
@@ -65,9 +67,11 @@ const StructureForHotels = ({hotels}) => {
                     <Carousel.Item> <img className="d-block w-100 imgimg" src={hotels.img[2]} alt="Third slide"/> </Carousel.Item>
                  </Carousel> 
                           <Card.Body variant="right" className='body-card'>
-                             <Card.Title className='title-cart'>{hotels.name}</Card.Title>
-                             { message ? <img src={favIcon} className='img-fav-icon' title='Save in Favourites' onClick={() => saveHotelLikeFavourite()}></img> :<Alert variant="success"><p>The Hotel was saved correctly in your favorites ✔</p></Alert>}
-                                 <Card.Text>
+                              <div style={{display:"flex", justifyContent: "space-between", alignItems: "center"}}>
+                                    <Card.Title className='title-cart' style={{marginLeft:"10vh"}}>{hotels.name}</Card.Title>
+                                       <FavsBar saveFavInDb={saveHotelLikeFavourite}/> 
+                               </div>
+                                  <Card.Text>
                                     <b className='stars'>{getStarRating(hotels.stars)} </b>
                                     <p>Prices may vary depending on the room chosen</p> 
                                     <br/>
@@ -76,6 +80,7 @@ const StructureForHotels = ({hotels}) => {
                                     <p>Six Nigths: 💸 {hotels.averagePrice * 6} USD</p>
                                     <br />
                                    <Link to={`/hotelDetail/${hotels.id}`}><button className='btn-reserv'>View More</button></Link> 
+                        
                          
                                 </Card.Text>
                                 

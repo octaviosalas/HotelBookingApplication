@@ -102,6 +102,7 @@ export const saveHotelByFavourite = async (req, res) => {
         })
         await newFav.save()
         res.json({message: "Saved in Favourites"})
+        console.log("GUARDADO EN FAVORITOS")
     } catch (err) {
        console.log(err)
        res.send(err)
