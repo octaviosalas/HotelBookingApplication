@@ -39,7 +39,7 @@ const FiveStars = () => {
         
       
             <div className='title-container'>
-               <p className='title'>Three stars Hotels! </p>
+               <p className='title'>Five stars Hotels! </p>
             </div>
 
       {spin ? <div className='load'> <Spinner animation="border" role="status"> <span className="visually-hidden">Loading...</span> </Spinner></div> 

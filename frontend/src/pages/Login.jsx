@@ -43,13 +43,16 @@ const Login = () => {
         })
         axios.post("http://localhost:4000/loginUser", userToInit)
              .then(({data}) => { 
-              userCtx.updateUser(data.user.id)
               setPositiveMsj(false)
+              console.log(data)
               setTimeout(() => { 
-                console.log(userCtx.userId)
-                navigate(`/main/${userCtx.userId}`)
-
-              }, 1500)
+                userCtx.updateUser(data.user.id)
+                console.log("El ID del contexto ahora es:" + data.user.id)
+              }, 500)
+                 setTimeout(() => { 
+                 console.log(userCtx.userId)
+                 navigate(`/main/${data.user.id}`)
+              }, 2000)
              })
              .catch((err) => { 
                 console.log(err)

@@ -22,13 +22,14 @@ const NavBar = ({}) => {
        console.log(userCtx.userId)
 
     const getUserNameToNavBar = () => { 
-    axios.get(`http://localhost:4000/getUserById/${userCtx.userId}`)
+      axios.get(`http://localhost:4000/getUserById/${userCtx.userId}`)
          .then((res) => {
           console.log(res.data)
           setTimeout(() => { 
             setUserName(res.data.name)
             setDidntGotUserName(false)
-          }, [])
+            console.log("szhflksal")
+          }, 1000)
     
         })
          .catch((err) => console.log(err))
@@ -36,7 +37,7 @@ const NavBar = ({}) => {
 
    useEffect(() => { 
      getUserNameToNavBar()
-   }, [])
+   }, [userCtx.userId])
 
 
    const goFavourites = () => { 
@@ -45,6 +46,10 @@ const NavBar = ({}) => {
 
    const goMyReserves = () => { 
     navigate(`/myReserves/${userCtx.userId}`)
+   }
+
+   const signOf = () => { 
+      userCtx.updateUser(null)
    }
  
   return (
@@ -82,8 +87,10 @@ const NavBar = ({}) => {
          
         { didntGotUserName ?  
            <Nav> 
+                 
                  <Nav.Link href="/userRegister" className='item-nav' title='Register' >Register</Nav.Link>
                  <Nav.Link eventKey={2} href="#memes" className='item-nav' title='sign in'>Sign In</Nav.Link>
+                 
            </Nav>
                            :
             <Nav>
@@ -92,7 +99,7 @@ const NavBar = ({}) => {
                    <NavDropdown.Item onClick={() => goFavourites()} className='nav-select'>Favourites</NavDropdown.Item>
                  <NavDropdown.Item className='nav-select'>Setting</NavDropdown.Item>
                  </NavDropdown>
-                 <Link to={"/login"} className='lnk'><Nav.Link eventKey={2} href="#memes" className='item-nav' title='sign in'>Sign Of</Nav.Link></Link> 
+                 <Link to={"/login"} className='lnk'><Nav.Link eventKey={2} href="#memes" className='item-nav' title='sign in' onClick={() => signOf()}>Sign Of</Nav.Link></Link> 
             </Nav>
     }
    
