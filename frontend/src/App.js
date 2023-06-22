@@ -21,6 +21,7 @@ import FiveStars from './pages/FiveStars';
 import Reserves from './components/Reserves';
 import NavBar from './components/Navbar';
 import MyReservations from './pages/MyReservations';
+import Orders from './components/Orders';
 
 
 
@@ -62,7 +63,7 @@ function App() {
 
       </UserProvider>
  
-    
+
         
 
     </div>
