@@ -140,8 +140,8 @@ const Reserves = () => {
                                 <p>✔</p>
                                 <br/>
                                 <div style={{display:"flex"}}>
-                                 <Link to={`/main/${userCtx.userId}`}> <p style={{marginLeft:"14vh", textDecoration:"underline", cursor:"pointer"}}>Go Main</p></Link>
-                                 <Link to={`/myReserves/${userCtx.userId}`}> <p style={{marginLeft:"14vh", textDecoration:"underline", cursor:"pointer"}}>View My Reserves</p></Link>
+                                 <Link to={`/myReserves/${userCtx.userId}`}> <p style={{marginLeft:"14vh", textDecoration:"underline", cursor:"pointer"}}>Go Main</p></Link>
+                                 <Link to={`/orders/${userCtx.userId}`}> <p style={{marginLeft:"14vh", textDecoration:"underline", cursor:"pointer"}}>View My Reserves</p></Link>
                                 </div>
                             
                              </Alert>
@@ -173,7 +173,7 @@ const Reserves = () => {
                                    <Accordion.Header><b className='btn-b'>Amount of People</b></Accordion.Header>
                                      <Accordion.Body>
                                          <Form.Select aria-label="Default select example" onChange={(e) => setPeople(e.target.value)}>
-                                             <option value="1" >Alone</option>
+                                             <option value="1" >One</option>
                                              <option value="2" >Two</option>
                                              <option value="3" >Three</option>
                                              <option value="3" >Four</option>
