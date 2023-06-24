@@ -66,9 +66,9 @@ const StructureFavorites = ({hotels}) => {
                     
     
                     <Accordion defaultActiveKey="0" className='acor-dion'>
-                         <Accordion.Item eventKey="1">
+                         <Accordion.Item eventKey="1" style={{marginTop:"1vh"}}>
                                  <Accordion.Header className='btn-sectionn'> <b className='btn-b'>Servicies</b></Accordion.Header>
-                                     <Accordion.Body >  
+                                     <Accordion.Body style={{marginTop:"1.5vh"}}>  
                                              <p>{hotels.servicies[0]}</p>
                                              <p>{hotels.servicies[1]}</p>
                                              <p>{hotels.servicies[2]}</p>
@@ -77,18 +77,18 @@ const StructureFavorites = ({hotels}) => {
                                              <p>{hotels.servicies[5]}</p>
                                              <p>{hotels.servicies[6]}</p>               
                                      </Accordion.Body>
-                                </Accordion.Item>
-                                <Accordion.Item eventKey="2">
+                                </Accordion.Item >
+                                <Accordion.Item eventKey="2" style={{marginTop:"1vh"}}>
                                    <Accordion.Header className='btn-sectionn'> <b className='btn-b'>Location</b> </Accordion.Header>
-                                        <Accordion.Body >  
+                                        <Accordion.Body style={{marginTop:"1.5vh"}}>  
                                                 <p> 📍 {hotels.country}</p> 
                                                 <p> 📍 {hotels.city}</p> 
                                                 <p> 🏠 {hotels.adress}</p> 
                                        </Accordion.Body>
                                     </Accordion.Item>
-                                    <Accordion.Item eventKey="3">
+                                    <Accordion.Item eventKey="3" style={{marginTop:"1vh"}}>
                                       <Accordion.Header className='btn-sectionn' > <b className='btn-b'>Contact</b></Accordion.Header>
-                                      <Accordion.Body >  
+                                      <Accordion.Body style={{marginTop:"1.5vh"}}>  
                                                 <p> 📞 Tel: {hotels.telephone}</p>       
                                                 <p> ✉ Email: {hotels.email} </p>                                     
                                        </Accordion.Body>

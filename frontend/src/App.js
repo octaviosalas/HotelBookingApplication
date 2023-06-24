@@ -31,6 +31,7 @@ import MyReserves from './components/MyReserves';
 
 
 
+
 function App() {
   return (
 
@@ -44,9 +45,7 @@ function App() {
          <Routes>
            <Route path='/' element={<Register />}></Route> 
            <Route path='/login' element={<Login />}></Route> 
-           
-            <Route path='/main/:id' element={<Main />}></Route> 
-
+           <Route path='/main/:id' element={<Main />}></Route> 
            <Route path='/americanHotels' element={<AmericanHotels />}></Route> 
            <Route path='/southAmericaHotels' element={<SouthAmericaHotels />}></Route> 
            <Route path='/europeHotels' element={<EuropeHotels />}></Route> 
@@ -62,6 +61,7 @@ function App() {
            <Route path='/reserves/:id' element={<Reserves />}></Route>
            <Route path='/myReserves/:userId' element={<MyReserves />}></Route>
          </Routes>
+   
 
       </UserProvider>
  
@@ -73,4 +73,3 @@ function App() {
 }
 
 export default App;
- //<Route path='/myReserves/:userId' element={<MyReservations />}></Route>
