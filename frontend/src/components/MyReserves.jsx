@@ -15,6 +15,7 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import StructureMyReserves from './StructureMyReserves';
+import Spinner from 'react-bootstrap/Spinner';
 
 
 
@@ -33,7 +34,17 @@ export default function MyReserves() {
         axios.get(`http://localhost:4000/getReserves/${userCtx.userId}`)
              .then((res) => { 
                 console.log(res.data)
-                setReserves(res.data)
+                setTimeout(() => {
+                  if(res.data.length !== 0) { 
+                     setReserves(res.data)
+                     setLoad(false)
+                   } else { 
+                     setNotReserves(true)
+                     setLoad(false)
+                   }
+                }, 1500);
+               
+                
              })
              .catch((err) => { 
                 console.log(err)
@@ -47,12 +58,27 @@ export default function MyReserves() {
          }, 1500)
      }, [])
 
+   
+
   return (
       <div>
-              <div style={{textAlign:"center", marginTop:"5vh"}}>
-                    <h5 style={{fontSize:"1.9vh", marginBottom:"4vh"}}>This is your booking history</h5>
-              </div>
-         { reserves.map((res) =>  <StructureMyReserves reserves={res}/>)}
+  
+        {load ? (
+            <Spinner animation="border" role="status" style={{marginTop:"10vh"}}>
+                 <span className="visually-hidden">Loading...</span>
+           </Spinner>
+              ) : (
+             <>
+                {!notReserves && <h5 style={{marginTop:"10vh", textAlign:"center"}}>There are your Reservations</h5>} 
+
+                {reserves.map((res) => <StructureMyReserves reserves={res} />)}
+
+                {notReserves && <p style={{marginTop:"15vh"}}>There are no reservations at the moment. You can choose a hotel and book it!</p>}
+             </>
+           )}
+            
+        
+   
       </div>
   );
 }

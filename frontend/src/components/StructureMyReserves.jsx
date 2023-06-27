@@ -42,8 +42,8 @@ const StructureMyReserves = ({reserves}) => {
 
 
   return (
-    <div>
-
+    <div style={{marginTop:"5vh"}}>
+              
    
        <React.Fragment>
       <Table size="small">

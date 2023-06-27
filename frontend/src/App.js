@@ -21,6 +21,7 @@ import FiveStars from './pages/FiveStars';
 import Reserves from './components/Reserves';
 import NavBar from './components/Navbar';
 import MyReserves from './components/MyReserves';
+import FiltrosPrueba from './components/FiltrosPrueba';
 
 
 
@@ -65,7 +66,8 @@ function App() {
 
       </UserProvider>
  
-
+   
+   <FiltrosPrueba />
         
 
     </div>

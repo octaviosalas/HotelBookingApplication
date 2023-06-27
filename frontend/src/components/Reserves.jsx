@@ -141,7 +141,7 @@ const Reserves = () => {
                                 <br/>
                                 <div style={{display:"flex"}}>
                                  <Link to={`/myReserves/${userCtx.userId}`}> <p style={{marginLeft:"14vh", textDecoration:"underline", cursor:"pointer"}}>Go Main</p></Link>
-                                 <Link to={`/orders/${userCtx.userId}`}> <p style={{marginLeft:"14vh", textDecoration:"underline", cursor:"pointer"}}>View My Reserves</p></Link>
+                                 <Link to={`/myReserves/${userCtx.userId}`}> <p style={{marginLeft:"14vh", textDecoration:"underline", cursor:"pointer"}}>View My Reserves</p></Link>
                                 </div>
                             
                              </Alert>
