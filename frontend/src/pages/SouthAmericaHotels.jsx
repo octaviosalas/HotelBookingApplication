@@ -6,6 +6,7 @@ import NavBar from '../components/Navbar'
 import Spinner from 'react-bootstrap/Spinner'; //bootstrap spinner load
 import "../styles/structurehotels.css"
 
+
 const SouthAmericaHotels = () => {
 
     const [hotels, setHotels] = useState([])
@@ -47,9 +48,16 @@ const SouthAmericaHotels = () => {
                        <h3 className='title'>South America Hotels</h3>
                    </div>
 
-                   <div className='container-americann'>
-                      {hotels.map((h) => <StructureForHotels hotels={h}/>)}
-                   </div>
+                   
+
+                        <div className='container-americann'>
+                            {hotels.map((h) => <StructureForHotels hotels={h}/>)}
+                        </div>
+
+                      
+
+
+                  
            </> 
    }
       

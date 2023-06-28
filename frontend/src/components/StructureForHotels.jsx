@@ -14,6 +14,7 @@ import Alert from 'react-bootstrap/Alert';
 import Opinions from './Opinions';
 import FavsBar from './SnackFavourites';
 
+
 //  { message ? <img src={favIcon} className='img-fav-icon' title='Save in Favourites' onClick={() => saveHotelLikeFavourite()}></img> :<Alert variant="success"><p>The Hotel was saved correctly in your favorites ✔</p></Alert>}
 
 
@@ -58,7 +59,14 @@ const StructureForHotels = ({hotels}) => {
 
 
   return (
-    <div className='structure-items'> 
+
+    <>     
+
+
+          
+
+       <div className='structure-items'> 
+       
          <Card className='card-allworld'>
             <div className='cont-card'>
                  <Carousel className='img-item' variant="left">
@@ -125,6 +133,9 @@ const StructureForHotels = ({hotels}) => {
         </Card>
     </div>
 
+   
+   </>
+    
 
   )
 }

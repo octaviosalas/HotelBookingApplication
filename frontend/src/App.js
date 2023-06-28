@@ -33,6 +33,7 @@ import FiltrosPrueba from './components/FiltrosPrueba';
 
 
 
+
 function App() {
   return (
 
@@ -61,13 +62,13 @@ function App() {
            <Route path='/fiveStars' element={<FiveStars />}></Route>
            <Route path='/reserves/:id' element={<Reserves />}></Route>
            <Route path='/myReserves/:userId' element={<MyReserves />}></Route>
+         
          </Routes>
-   
+  
 
       </UserProvider>
  
-   
-   <FiltrosPrueba />
+
         
 
     </div>
