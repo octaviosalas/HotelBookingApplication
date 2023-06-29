@@ -11,6 +11,7 @@ import HotelDetail from './pages/HotelDetail';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import { UserProvider } from './store/usercontext';
+import { FilterProvider } from './store/filterscontext';
 import FavouritesHotels from './pages/FavouritesHotels';
 import TwentyToFifty from './pages/TwentyToFifty';
 import FiftyToEighty from "./pages/FiftyToEighty"
@@ -22,6 +23,7 @@ import Reserves from './components/Reserves';
 import NavBar from './components/Navbar';
 import MyReserves from './components/MyReserves';
 import FiltrosPrueba from './components/FiltrosPrueba';
+import RecibimientoDeFiltro from './components/RecibimientoDeFiltro';
 
 
 
@@ -43,8 +45,9 @@ function App() {
   
 
       <UserProvider>
-          <NavBar/>
-         <Routes>
+         <FilterProvider>
+            <NavBar/>
+              <Routes>
            <Route path='/' element={<Register />}></Route> 
            <Route path='/login' element={<Login />}></Route> 
            <Route path='/main/:id' element={<Main />}></Route> 
@@ -62,10 +65,9 @@ function App() {
            <Route path='/fiveStars' element={<FiveStars />}></Route>
            <Route path='/reserves/:id' element={<Reserves />}></Route>
            <Route path='/myReserves/:userId' element={<MyReserves />}></Route>
-         
          </Routes>
-  
-
+         <RecibimientoDeFiltro />
+        </FilterProvider>
       </UserProvider>
  
 
