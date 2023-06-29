@@ -66,6 +66,28 @@ const NavBar = ({}) => {
 
           <FiltrosPrueba />
 
+          <NavDropdown title="One Filter"  id="collasible-nav-dropdown">
+                 <NavDropdown title="By Price"> 
+                    <NavDropdown.Item   href="/twentyToFifty"> 20-50 USD</NavDropdown.Item>
+                    <NavDropdown.Item  href="/fiftyToEighty"> 50-80 USD</NavDropdown.Item>
+                    <NavDropdown.Item href="/eightyToTwoHundred"> 80-200 USD</NavDropdown.Item>
+                 
+                 </NavDropdown>
+
+                 <NavDropdown title="By Stars"> 
+                    <NavDropdown.Item href="/threeStars"> ⭐⭐⭐ </NavDropdown.Item>
+                    <NavDropdown.Item href="/fourStars"> ⭐⭐⭐⭐</NavDropdown.Item>
+                    <NavDropdown.Item href="/fiveStars"> ⭐⭐⭐⭐⭐</NavDropdown.Item>
+                 </NavDropdown>
+
+                 <NavDropdown title="By Punctuation"> 
+                    <NavDropdown.Item href="#action/3.2">6+ acceptable  </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">7+ Good </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">8+ VeryGood </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">9+ Excelent </NavDropdown.Item>
+                 </NavDropdown>
+          </NavDropdown>
+
         </Nav>
          
         { didntGotUserName ?  
