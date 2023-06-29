@@ -9,7 +9,6 @@ import RadioGroup from '@mui/material/RadioGroup';
 import Buttonn from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
-import SearchWithFilters from './SearchWithFilters';
 import { Link } from 'react-router-dom';
 
 
@@ -30,11 +29,6 @@ function MyVerticallyCenteredModal(props) {
         setShowBtn(false)
        }, 500)
      }
-     
-
-      
-
-     
 
   return (
     <Modal
@@ -96,6 +90,7 @@ function MyVerticallyCenteredModal(props) {
                   showBtn ? <Buttonn variant="contained" style={{left: '50%', transform: 'translate(-50%, -50%)'}} endIcon={<SendIcon />} onClick={() => saveFiltersInLocalStorage()}>Apply</Buttonn> 
                           :
                           <Link to={"/hotelsFiltered"}><Buttonn onClick={props.onHide} style={{marginLeft: "30vh"}}>Search With Filters</Buttonn></Link>
+                          
                 }
                 </Stack>
               </div>
@@ -118,7 +113,7 @@ const FiltrosPrueba = () => {
   return (
        <div>
            <>
-             <Button style={{color:"#000000)", background:"#ECF0F1", border:"none", marginTop:"0.2vh"}} onClick={() => setModalShow(true)}>  All Filters </Button>
+             <Button style={{color:"black", background:"#ECF0F1", border:"none", marginTop:"0.2vh"}} onClick={() => setModalShow(true)}>  All Filters </Button>
              <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)}/>
            </>
        </div>

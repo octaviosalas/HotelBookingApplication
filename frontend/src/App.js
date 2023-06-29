@@ -62,7 +62,7 @@ function App() {
            <Route path='/eightyToTwoHundred' element={<EightyToTwoHundred />}></Route>
            <Route path='/threeStars' element={<ThreeStars />}></Route>
            <Route path='/fourStars' element={<FourStarsHotels />}></Route>
-           
+           <Route path='/fiveStars' element={<FiveStars />}></Route>
            <Route path='/hotelsFiltered' element={<HotelsFiltered />}></Route>
            <Route path='/reserves/:id' element={<Reserves />}></Route>
            <Route path='/myReserves/:userId' element={<MyReserves />}></Route>

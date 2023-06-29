@@ -6,6 +6,10 @@ import SendIcon from '@mui/icons-material/Send';
 import StructureForHotels from './StructureForHotels';
 import { Link } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 const HotelsFiltered = () => {
 
@@ -18,6 +22,7 @@ const HotelsFiltered = () => {
     const [load, setLoad] = useState(true)
 
     console.log(localStorage)
+    const navigate = useNavigate()
 
     const getMinPriceLocalStorage = () => { 
           console.log("El precio minimo es " + localStorage.minPrice)
@@ -66,7 +71,6 @@ const getHotelsFiltered = () => {
             setHotelsWithFiltersChoosen(filtered)
             setTimeout(() => { 
                 setLoad(false)
-
             }, 2600)
            
           })
@@ -83,15 +87,24 @@ const getHotelsFiltered = () => {
       
     }, [minPrice, maxPrice, stars, continent])
 
+
+    const clearLocalStorage = () => { 
+        localStorage.clear();
+        navigate("/allHotels")
+    }
+
   return (
     <div>
-           {msjNoHotels ? <p>Nothing</p> : null}
-           {load ? 
-             <div style={{marginTop:"25vh"}}>
-                    <Spinner animation="border" />
-             </div>   
-           : hotelsWithFilterChoosen.map((h) => <StructureForHotels hotels={h}/>)}
+          {load ? null : <p style={{marginTop:"3vh", cursor:"pointer"}} onClick={() => clearLocalStorage()}>Delete Filters</p>}
       
+           {load ? ( 
+             <div style={{marginTop:"25vh"}}> <Spinner animation="border" /> </div>   
+            ) : ( 
+                hotelsWithFilterChoosen.map((h) => <StructureForHotels hotels={h}/>)
+                
+            )}
+
+           
     </div>
   )
 }
