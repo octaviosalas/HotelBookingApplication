@@ -28,6 +28,8 @@ const FiltrosPrueba = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const filtersChoosen = filterCtx.searchFilters
+
   if (!show) {
     console.log("El estado show es falso");
   }
@@ -36,17 +38,16 @@ const FiltrosPrueba = () => {
     console.log("El estado show es verdadero");
   }
 
-  const addingFilterMinPrice = (filter) => {
-  
-    filterCtx.addFilter({ minPrice: filter });
+  const addingFilterMinPrice = (minPrice) => {
+    filterCtx.addFilter({ minPrice});
   };
 
-  const addingFilterMaxPrice = (filter) => { 
-    filterCtx.addFilter({maxPrice: filter})
+  const addingFilterMaxPrice = (maxPrice) => { 
+    filterCtx.addFilter({ maxPrice})
   }
 
-  const addingFilterStars = (filter) => { 
-    filterCtx.addFilter({stars: filter})
+  const addingFilterStars = (stars) => { 
+    filterCtx.addFilter({ stars})
   }
 
   const addingFilterContinent = (filter) => { 

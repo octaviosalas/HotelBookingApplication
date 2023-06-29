@@ -13,7 +13,9 @@ const FilterProvider = ({ children }) => {
     const [searchFilters, setSearchFilters] = useState([])
 
       const addFilter = (newFilter) => { 
-        setSearchFilters([...searchFilters, newFilter])
+        setSearchFilters((prevFilters) => {
+          return [...prevFilters, newFilter];
+        });
       }
 
       const deleteFilters = () => { 
