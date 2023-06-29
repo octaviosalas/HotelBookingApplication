@@ -1,4 +1,28 @@
-import { useState, useEffect } from 'react'
+import React from 'react'
+
+const FiltrosPrueba = () => {
+  return (
+    <div>
+        aaa
+    </div>
+  )
+}
+
+export default FiltrosPrueba
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import SearchIcon from '@mui/icons-material/Search';
@@ -310,3 +334,4 @@ const FiltrosPrueba = () => {
 }
 
 export default FiltrosPrueba;
+*/

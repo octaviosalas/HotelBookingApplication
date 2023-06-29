@@ -22,8 +22,7 @@ import FiveStars from './pages/FiveStars';
 import Reserves from './components/Reserves';
 import NavBar from './components/Navbar';
 import MyReserves from './components/MyReserves';
-import FiltrosPrueba from './components/FiltrosPrueba';
-import RecibimientoDeFiltro from './components/RecibimientoDeFiltro';
+
 
 
 
@@ -66,7 +65,7 @@ function App() {
            <Route path='/reserves/:id' element={<Reserves />}></Route>
            <Route path='/myReserves/:userId' element={<MyReserves />}></Route>
          </Routes>
-         <RecibimientoDeFiltro />
+         
         </FilterProvider>
       </UserProvider>
  
