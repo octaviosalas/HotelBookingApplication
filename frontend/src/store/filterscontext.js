@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 
 const FilterContext = createContext({ 
     searchFilters: [],              
-    saveSearchFilters: () => {}, 
+    addFilter: () => {}, 
     deleteSearchFilters: () => {}   
 });
 
@@ -21,9 +21,9 @@ const FilterProvider = ({ children }) => {
      }
     
       return (
-        <UserContext.Provider value={{searchFilters: searchFilters, addFilter: addFilter, deleteFilters: deleteFilters  }}>
+        <FilterContext.Provider value={{searchFilters, addFilter, deleteFilters  }}>
           {children}
-        </UserContext.Provider>
+        </FilterContext.Provider>
       );
     };
     
