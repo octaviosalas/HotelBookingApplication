@@ -86,16 +86,43 @@ const getHotelsFiltered = () => {
             console.log(hotelsWithFilterChoosen)
       
     }, [minPrice, maxPrice, stars, continent])
+   
 
-
-    const clearLocalStorage = () => { 
-        localStorage.clear();
-        navigate("/allHotels")
+    /*function cleanLocalStorage(properties) {
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    if (properties.includes(key)) {
+      localStorage.removeItem(key);
     }
+  }
+}
+
+// Uso de ejemplo
+var propertiesToDelete = ["propiedad1", "propiedad2", "propiedad3"];
+cleanLocalStorage(propertiesToDelete);*/
+
+
+const propertysToDeleteOfLocalStorage = ["maxPrice", "continent", "stars", "minPrice"];
+
+const cleanLocalStorage = (deleteItem) => {
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    if (deleteItem.includes(key)) {
+      localStorage.removeItem(key);
+    }
+  }
+  setTimeout(() => { 
+      console.log(localStorage)
+      navigate("/allHotels")
+  }, [])
+}
+
+
+
 
   return (
     <div>
-          {load ? null : <p style={{marginTop:"3vh", cursor:"pointer"}} onClick={() => clearLocalStorage()}>Delete Filters</p>}
+          {load ? null : <p style={{marginTop:"3vh", cursor:"pointer"}} onClick={() => cleanLocalStorage(propertysToDeleteOfLocalStorage)}>Delete Filters</p>}
       
            {load ? ( 
              <div style={{marginTop:"25vh"}}> <Spinner animation="border" /> </div>   

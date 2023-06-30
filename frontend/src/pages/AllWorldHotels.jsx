@@ -13,7 +13,7 @@ import StructureForHotels from '../components/StructureForHotels'
 const AllWorldHotels = () => {
 
 
-    
+   console.log(localStorage)
     const [hotels, setHotels] = useState([])
     const [load, setLoad] = useState(true)
 
