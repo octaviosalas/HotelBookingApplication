@@ -7,6 +7,8 @@ import StructureForHotels from './StructureForHotels';
 import { Link } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../store/usercontext.js';
 
 
 
@@ -23,6 +25,7 @@ const HotelsFiltered = () => {
 
     console.log(localStorage)
     const navigate = useNavigate()
+    const userCtx = useContext(UserContext)
 
     const getMinPriceLocalStorage = () => { 
           console.log("El precio minimo es " + localStorage.minPrice)
@@ -113,8 +116,12 @@ const cleanLocalStorage = (deleteItem) => {
   }
   setTimeout(() => { 
       console.log(localStorage)
-      navigate("/allHotels")
-  }, [])
+      navigate(`/main/${userCtx.userId}`)
+  }, 400)
+  setTimeout(() => { 
+       window.location.reload()
+  }, 1000)
+
 }
 
 

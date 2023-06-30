@@ -5,10 +5,12 @@ import "../styles/main.css"
 
 
 const Main = () => {
-
+  console.log(localStorage)
 
 
   return (
+
+
 
  <div>     
    <ContinentsItems /> 
